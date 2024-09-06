@@ -21,10 +21,10 @@ export const Cta25 = (props: Cta25Props) => {
 			id='relume'
 			className='px-[5%] py-16 md:py-24 lg:py-28'>
 			<div className='container max-w-lg text-center'>
-				<h2 className='rb-5 mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl'>
+				<h2 className='rb-5 mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl capitalize'>
 					{heading}
 				</h2>
-				<p className='md:text-md'>{description}</p>
+				<p className='md:text- max-w-sm mx-auto'>{description}</p>
 				<div className='mt-6 flex items-center justify-center gap-4 md:mt-8'>
 					{buttons.map((button, index) => (
 						<Button
@@ -43,5 +43,5 @@ export const Cta25Defaults: Cta25Props = {
 	heading: 'Medium length heading goes here',
 	description:
 		'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.',
-	buttons: [{ title: 'Button' }, { title: 'Button', variant: 'secondary' }],
+	buttons: [{ title: 'Button' }],
 };

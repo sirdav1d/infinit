@@ -12,6 +12,7 @@ import {
 import { Button, useMediaQuery } from '@relume_io/relume-ui';
 import type { ButtonProps } from '@relume_io/relume-ui';
 import { useRef } from 'react';
+import Image from 'next/image';
 
 type ImageProps = {
 	src: string;
@@ -47,10 +48,10 @@ export const Header81 = (props: Header81Props) => {
 	return (
 		<section
 			ref={headerRef}
-			className='relative md:h-[300vh]'>
+			className='relative md:h-[300vh]  bg-zinc-100'>
 			<div className='static top-0 grid auto-cols-fr grid-cols-1 items-center gap-y-16 pt-16 md:pt-24 lg:sticky lg:h-screen lg:grid-cols-2 lg:gap-y-0 lg:pt-0'>
-				<div className='relative mx-[5%] max-w-md lg:ml-[5vw] lg:mr-20 lg:justify-self-end'>
-					<h1 className='mb-5 text-6xl font-bold md:mb-6 md:text-9xl lg:text-10xl'>
+				<div className='relative mx-[5%] max-w-md lg:ml-[5vw] lg:mr-20 lg:justify-self-end '>
+					<h1 className='mb-5 text-6xl font-bold md:mb-6 md:text-9xl lg:text-10xl capitalize'>
 						{heading}
 					</h1>
 					<p className='md:text-md'>{description}</p>
@@ -87,9 +88,11 @@ const MotionImage = ({
 		{isMobile ? (
 			<div className='static w-full'>
 				<div className='relative size-full pt-[100%] lg:pt-0'>
-					<img
+					<Image
+						width={1400}
+						height={900}
 						src={image.src}
-						alt={image.alt}
+						alt={image.alt!}
 						className='absolute inset-0 size-full object-cover'
 					/>
 				</div>
@@ -99,9 +102,11 @@ const MotionImage = ({
 				style={{ width }}
 				className='absolute inset-0 left-auto w-auto'>
 				<div className='relative size-full pt-[100%] lg:pt-0'>
-					<img
+					<Image
+						width={1400}
+						height={900}
 						src={image.src}
-						alt={image.alt}
+						alt={image.alt!}
 						className='absolute inset-0 size-full object-cover'
 					/>
 				</div>
@@ -116,7 +121,7 @@ export const Header81Defaults: Header81Props = {
 		'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.',
 	buttons: [{ title: 'Button' }, { title: 'Button', variant: 'secondary' }],
 	image: {
-		src: 'https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg',
+		src: 'https://images.unsplash.com/photo-1669003985935-a52ce9d86756?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
 		alt: 'Relume placeholder image',
 	},
 };

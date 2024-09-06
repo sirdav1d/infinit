@@ -7,6 +7,7 @@ import type { ButtonProps } from '@relume_io/relume-ui';
 import { useEffect, useState } from 'react';
 import { RxChevronRight } from 'react-icons/rx';
 import clsx from 'clsx';
+import Image from 'next/image';
 
 type ImageProps = {
 	src: string;
@@ -72,10 +73,12 @@ export const Layout349 = (props: Layout349Props) => {
 									))}
 								</div>
 								<div className='mt-10 block w-full md:hidden'>
-									<img
+									<Image
+										width={400}
+										height={400}
 										src={content.image.src}
 										className='w-full'
-										alt={content.image.alt}
+										alt={'image de test'}
 									/>
 								</div>
 							</div>
@@ -91,16 +94,18 @@ export const Layout349 = (props: Layout349Props) => {
 						</div>
 					))}
 				</div>
-				<div className='sticky top-0 hidden h-screen md:flex md:flex-col md:items-center md:justify-center'>
+				<div className='sticky  h-screen md:flex md:flex-col md:items-center md:justify-center'>
 					{images.map((image, index) => (
-						<img
+						<Image
+							width={400}
+							height={400}
 							key={index}
 							src={image.src}
 							className={clsx('absolute w-full', {
 								'opacity-100': activeSection === index,
 								'opacity-0': activeSection !== index,
 							})}
-							alt={image.alt}
+							alt={'imagem test'}
 						/>
 					))}
 				</div>

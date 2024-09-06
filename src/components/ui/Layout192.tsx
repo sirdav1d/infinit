@@ -2,6 +2,7 @@
 
 import { Button } from '@relume_io/relume-ui';
 import type { ButtonProps } from '@relume_io/relume-ui';
+import Image from 'next/image';
 import { RxChevronRight } from 'react-icons/rx';
 
 type ImageProps = {
@@ -32,10 +33,12 @@ export const Layout192 = (props: Layout192Props) => {
 			<div className='container'>
 				<div className='grid grid-cols-1 gap-y-12 md:grid-cols-2 md:items-center md:gap-x-12 lg:gap-x-20'>
 					<div className='order-2 md:order-1'>
-						<img
+						<Image
+							width={400}
+							height={400}
 							src={image.src}
 							className='w-full object-cover'
-							alt={image.alt}
+							alt={image.alt!}
 						/>
 					</div>
 					<div className='order-1 lg:order-2'>

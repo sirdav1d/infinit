@@ -7,6 +7,8 @@ import {
 	BiLogoLinkedinSquare,
 	BiLogoYoutube,
 } from 'react-icons/bi';
+import logo from '@/assets/logo.png';
+import Image from 'next/image';
 
 type ImageProps = {
 	url?: string;
@@ -45,7 +47,7 @@ export type Footer4Props = React.ComponentPropsWithoutRef<'section'> &
 	Partial<Props>;
 
 export const Footer4 = (props: Footer4Props) => {
-	const { logo, footerText, columnLinks, footerLinks, socialMediaLinks } = {
+	const { footerText, columnLinks, footerLinks, socialMediaLinks } = {
 		...Footer4Defaults,
 		...props,
 	} as Props;
@@ -54,11 +56,13 @@ export const Footer4 = (props: Footer4Props) => {
 			<div className='container'>
 				<div className='grid grid-cols-1 items-center justify-center justify-items-center gap-x-[4vw] gap-y-12 pb-12 md:pb-18 lg:grid-cols-[0.25fr_1fr_0.25fr] lg:justify-between lg:gap-y-4 lg:pb-20'>
 					<a
-						href={logo.url}
+						href={'/'}
 						className='lg:justify-self-start'>
-						<img
-							src={logo.src}
-							alt={logo.alt}
+						<Image
+							width={200}
+							height={100}
+							src={logo}
+							alt={'Logo Infinit Multi Gestão'}
 							className='inline-block'
 						/>
 					</a>
@@ -127,7 +131,7 @@ export const Footer4Defaults: Footer4Props = {
 		{ url: '#', icon: <BiLogoLinkedinSquare className='size-6' /> },
 		{ url: '#', icon: <BiLogoYoutube className='size-6' /> },
 	],
-	footerText: '© 2024 Relume. All rights reserved.',
+	footerText: '© 2024 Tars Projetos. Todos os direitos reservados.',
 	footerLinks: [
 		{ title: 'Privacy Policy', url: '#' },
 		{ title: 'Terms of Service', url: '#' },

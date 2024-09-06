@@ -7,6 +7,8 @@ import { Button, useMediaQuery } from '@relume_io/relume-ui';
 import type { ButtonProps } from '@relume_io/relume-ui';
 import { AnimatePresence, motion } from 'framer-motion';
 import { RxChevronDown } from 'react-icons/rx';
+import logo from '@/assets/logo.png';
+import Image from 'next/image';
 
 type ImageProps = {
 	url?: string;
@@ -30,7 +32,7 @@ export type Navbar2Props = React.ComponentPropsWithoutRef<'section'> &
 	Partial<Props>;
 
 export const Navbar2 = (props: Navbar2Props) => {
-	const { logo, navLinks, buttons } = {
+	const { navLinks, buttons } = {
 		...Navbar2Defaults,
 		...props,
 	} as Props;
@@ -39,13 +41,15 @@ export const Navbar2 = (props: Navbar2Props) => {
 	const isMobile = useMediaQuery('(max-width: 991px)');
 
 	return (
-		<nav className='flex w-full items-center border-b border-border-primary bg-background-primary lg:min-h-18 lg:px-[5%]'>
-			<div className='mx-auto size-full lg:grid lg:grid-cols-[0.375fr_1fr_0.375fr] lg:items-center lg:justify-between lg:gap-4'>
+		<nav className='flex md:fixed w-full items-center py-4 z-50 bg-zinc-50/60 backdrop-blur-md lg:px-[5%] '>
+			<div className='mx-auto size-full lg:grid lg:grid-cols-[0.375fr_1fr_0.375fr] lg:items-center max-w-xxl lg:justify-between lg:gap-4'>
 				<div className='flex min-h-16 items-center justify-between px-[5%] md:min-h-18 lg:min-h-full lg:px-0'>
-					<a href={logo.url}>
-						<img
-							src={logo.src}
-							alt={logo.alt}
+					<a href={'/'}>
+						<Image
+							width={60}
+							height={60}
+							src={logo}
+							alt={'logo infiti multi gestão'}
 						/>
 					</a>
 					<div className='flex items-center gap-4 lg:hidden'>
@@ -200,15 +204,7 @@ export const Navbar2Defaults: Navbar2Props = {
 		{ title: 'Link One', url: '#' },
 		{ title: 'Link Two', url: '#' },
 		{ title: 'Link Three', url: '#' },
-		{
-			title: 'Link Four',
-			url: '#',
-			subMenuLinks: [
-				{ title: 'Link Five', url: '#' },
-				{ title: 'Link Six', url: '#' },
-				{ title: 'Link Seven', url: '#' },
-			],
-		},
+		{ title: 'Link Four', url: '#' },
 	],
 	buttons: [
 		{
