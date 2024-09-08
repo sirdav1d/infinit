@@ -59,8 +59,8 @@ export const Footer4 = (props: Footer4Props) => {
 						href={'/'}
 						className='lg:justify-self-start'>
 						<Image
-							width={200}
-							height={100}
+							width={100}
+							height={80}
 							src={logo}
 							alt={'Logo Infinit Multi Gestão'}
 							className='inline-block'
@@ -89,7 +89,7 @@ export const Footer4 = (props: Footer4Props) => {
 						))}
 					</div>
 				</div>
-				<div className='h-px w-full bg-black' />
+				<div className='h-px w-full bg-zinc-700/30' />
 				<div className='flex flex-col-reverse items-center justify-center justify-items-center pb-4 pt-6 text-sm md:flex-row md:gap-x-6 md:pb-0 md:pt-8'>
 					<p className='mt-8 md:mt-0'>{footerText}</p>
 					<ul className='grid grid-flow-row grid-cols-[max-content] items-center justify-center justify-items-center gap-x-0 gap-y-4 text-sm md:grid-flow-col md:gap-x-6 md:gap-y-0'>
@@ -120,7 +120,6 @@ export const Footer4Defaults: Footer4Props = {
 				{ title: 'Link Two', url: '#' },
 				{ title: 'Link Three', url: '#' },
 				{ title: 'Link Four', url: '#' },
-				{ title: 'Link Five', url: '#' },
 			],
 		},
 	],
@@ -135,6 +134,5 @@ export const Footer4Defaults: Footer4Props = {
 	footerLinks: [
 		{ title: 'Privacy Policy', url: '#' },
 		{ title: 'Terms of Service', url: '#' },
-		{ title: 'Cookies Settings', url: '#' },
 	],
 };

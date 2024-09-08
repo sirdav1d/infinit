@@ -3,12 +3,13 @@
 'use client';
 
 import { useState } from 'react';
-import { Button, useMediaQuery } from '@relume_io/relume-ui';
+import { useMediaQuery } from '@relume_io/relume-ui';
 import type { ButtonProps } from '@relume_io/relume-ui';
 import { AnimatePresence, motion } from 'framer-motion';
 import { RxChevronDown } from 'react-icons/rx';
 import logo from '@/assets/logo.png';
 import Image from 'next/image';
+import { Button } from './button';
 
 type ImageProps = {
 	url?: string;
@@ -46,22 +47,17 @@ export const Navbar2 = (props: Navbar2Props) => {
 				<div className='flex min-h-16 items-center justify-between px-[5%] md:min-h-18 lg:min-h-full lg:px-0'>
 					<a href={'/'}>
 						<Image
-							width={60}
-							height={60}
+							width={64}
+							height={40}
 							src={logo}
 							alt={'logo infiti multi gestão'}
 						/>
 					</a>
 					<div className='flex items-center gap-4 lg:hidden'>
 						<div>
-							{buttons.map((button, index) => (
-								<Button
-									key={index}
-									className='w-full px-4 py-1'
-									{...button}>
-									{button.title}
-								</Button>
-							))}
+							<Button className='border-2 bg-transparent border-blue-500 hover:bg-blue-600 font-semibold text-blue-600 transition-all ease-linear duration-200 hover:text-zinc-50 text-sm'>
+								Área Do Cliente
+							</Button>
 						</div>
 						<button
 							className='-mr-2 flex size-12 flex-col items-center justify-center'
@@ -101,7 +97,7 @@ export const Navbar2 = (props: Navbar2Props) => {
 					{navLinks.map((navLink, index) => (
 						<div
 							key={index}
-							className='first:pt-4 lg:first:pt-0'>
+							className='first:pt-4 lg:first:pt-0 '>
 							{navLink.subMenuLinks && navLink.subMenuLinks.length > 0 ? (
 								<SubMenu
 									navLink={navLink}
@@ -110,7 +106,7 @@ export const Navbar2 = (props: Navbar2Props) => {
 							) : (
 								<a
 									href={navLink.url}
-									className='block py-3 text-md lg:px-4 lg:py-2 lg:text-base'>
+									className='block py-3 text-md lg:px-4 lg:py-2 lg:text-base font-semibold hover:text-blue-600 transition-all ease-linear duration-200'>
 									{navLink.title}
 								</a>
 							)}
@@ -118,14 +114,9 @@ export const Navbar2 = (props: Navbar2Props) => {
 					))}
 				</motion.div>
 				<div className='hidden justify-self-end lg:block'>
-					{buttons.map((button, index) => (
-						<Button
-							key={index}
-							className='px-6 py-2'
-							{...button}>
-							{button.title}
-						</Button>
-					))}
+					<Button className='border-2 bg-transparent border-blue-500 hover:bg-blue-600 font-semibold text-blue-600 transition-all ease-linear duration-200 hover:text-zinc-50 text-base'>
+						Área Do Cliente
+					</Button>
 				</div>
 			</div>
 		</nav>
@@ -201,10 +192,10 @@ export const Navbar2Defaults: Navbar2Props = {
 		alt: 'Logo image',
 	},
 	navLinks: [
-		{ title: 'Link One', url: '#' },
-		{ title: 'Link Two', url: '#' },
-		{ title: 'Link Three', url: '#' },
-		{ title: 'Link Four', url: '#' },
+		{ title: 'Home', url: '/' },
+		{ title: 'Sobre Nós', url: '/about' },
+		{ title: 'Projetos', url: '/projects' },
+		{ title: 'Contato', url: '/contact' },
 	],
 	buttons: [
 		{

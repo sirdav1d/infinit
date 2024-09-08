@@ -6,7 +6,10 @@ import './globals.css';
 import { Footer4 } from '@/components/ui/Footer4';
 import { Navbar2 } from '@/components/ui/Navbar2';
 
-const montserrat = Montserrat({ subsets: ['latin'] });
+const montserrat = Montserrat({
+	subsets: ['latin'],
+	weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+});
 
 export const metadata: Metadata = {
 	title: 'Infinit Multi Gestão',
