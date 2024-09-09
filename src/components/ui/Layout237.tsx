@@ -35,7 +35,7 @@ export const Layout237 = (props: Layout237Props) => {
 			<div className='container flex flex-col items-center'>
 				<div className='rb-12 mb-12 text-center md:mb-18 lg:mb-20'>
 					<div className='w-full max-w-lg'>
-						<p className='mb-3 font-semibold md:mb-4'>{tagline}</p>
+						<p className='mb-3 font-semibold md:mb-4 text-red-600'>{tagline}</p>
 						<h2 className='rb-5 mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl'>
 							{heading}
 						</h2>
@@ -69,17 +69,13 @@ export const Layout237 = (props: Layout237Props) => {
 };
 
 export const Layout237Defaults: Layout237Props = {
-	tagline: 'Tagline',
-	heading: 'Medium length section heading goes here',
-	description:
-		'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.',
 	sections: [
 		{
 			icon: {
 				src: 'https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg',
 				alt: 'Relume logo 1',
 			},
-			heading: 'Medium length section heading goes here',
+			heading: 'Medium length',
 			description:
 				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.',
 		},
@@ -88,7 +84,7 @@ export const Layout237Defaults: Layout237Props = {
 				src: 'https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg',
 				alt: 'Relume logo 2',
 			},
-			heading: 'Medium length section heading goes here',
+			heading: 'Medium length',
 			description:
 				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.',
 		},
@@ -97,7 +93,7 @@ export const Layout237Defaults: Layout237Props = {
 				src: 'https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg',
 				alt: 'Relume logo 3',
 			},
-			heading: 'Medium length section heading goes here',
+			heading: 'Medium length',
 			description:
 				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.',
 		},
@@ -106,7 +102,7 @@ export const Layout237Defaults: Layout237Props = {
 				src: 'https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg',
 				alt: 'Relume logo 4',
 			},
-			heading: 'Medium length section heading goes here',
+			heading: 'Medium lengts',
 			description:
 				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.',
 		},

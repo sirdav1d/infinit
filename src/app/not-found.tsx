@@ -16,10 +16,10 @@ export default async function NotFound() {
 
 	return (
 		<section className='max-w-7xl h-screen px-4 xl:px-10 mx-auto w-full flex flex-col justify-center items-center gap-5'>
-			<h1 className='text-center font-bold text-4xl xl:text-7xl xl:mt-40'>
+			<h1 className='text-center font-bold text-4xl xl:text-7xl xl:mt-64'>
 				{data.headline}
 			</h1>
-			<div className='md:scale-75'>
+			<div className='md:scale-75 xl:w-[40%]'>
 				<LottieComponent lottie={data.lottiedata}></LottieComponent>
 			</div>
 		</section>
