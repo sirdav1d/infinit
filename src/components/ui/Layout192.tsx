@@ -4,6 +4,7 @@ import type { ButtonProps } from '@relume_io/relume-ui';
 import Image from 'next/image';
 import { RxChevronRight } from 'react-icons/rx';
 import { Button } from './button';
+import Link from 'next/link';
 
 type ImageProps = {
 	src: string;
@@ -50,9 +51,13 @@ export const Layout192 = (props: Layout192Props) => {
 						</h2>
 						<p className='md:text-md'>{description}</p>
 						<div className='mt-6 flex gap-x-4 md:mt-8'>
-							<Button className='border-2 bg-transparent border-blue-500 hover:bg-blue-600 font-semibold text-blue-600 transition-all ease-linear duration-200 hover:text-zinc-50 text-base'>
-								Saiba Mais
-							</Button>
+							<Link
+								prefetch
+								href={'/about'}>
+								<Button className='border-2 bg-transparent border-blue-500 hover:bg-blue-600 font-semibold text-blue-600 transition-all ease-linear duration-200 hover:text-zinc-50 text-base'>
+									Saiba Mais
+								</Button>
+							</Link>
 						</div>
 					</div>
 				</div>
