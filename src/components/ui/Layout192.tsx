@@ -26,18 +26,18 @@ export const Layout192 = (props: Layout192Props) => {
 			id='relume'
 			className='px-[5%] py-10 md:py-24 lg:py-28'>
 			<div className='container'>
-				<div className='grid grid-cols-1 gap-y-12 md:grid-cols-2 md:items-center md:gap-x-12 lg:gap-x-20 relative'>
-					<div className='order-2 md:order-1 z-50'>
+				<div className='flex flex-col md:flex-row gap-y-12 relative h-full md:items-center md:gap-x-12 lg:gap-x-20'>
+					<div className='order-2 md:order-1 w-full h-full  '>
 						<Image
 							width={480}
 							height={400}
 							src={image}
-							className='object-contain rounded-lg '
+							className='object-contain rounded-lg lg:absolute top-0 z-10 w-full md:w-[480px]'
 							alt={'Capacete de construção civil'}
 						/>
 					</div>
-					<span className='bg-red-600 w-[348px] h-[348px] -bottom-3 -left-3 absolute md:-top-5 md:-left-5 rounded-lg z-10'></span>
-					<div className='order-1 lg:order-2'>
+
+					<div className='order-1 lg:order-2 w-full h-full'>
 						<p className='mb-3 font-semibold md:mb-4 text-red-600'>{tagline}</p>
 						<h2 className='rb-5 mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl'>
 							{heading}

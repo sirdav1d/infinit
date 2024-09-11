@@ -26,6 +26,7 @@ export const Layout349 = (props: Layout349Props) => {
 		const currentScrollPosition = window.scrollY + sectionHeight / 2;
 		const currentSection = Math.floor(currentScrollPosition / sectionHeight);
 		setActiveSection(currentSection);
+		console.log(activeSection);
 	};
 
 	useEffect(() => {
@@ -45,7 +46,7 @@ export const Layout349 = (props: Layout349Props) => {
 								<p className='mb-3 font-semibold md:mb-4 text-red-600'>
 									{content.tagline}
 								</p>
-								<h2 className='rb-5 mb-5 text-4xl font-bold md:mb-6 md:text-7xl lg:text-8xl'>
+								<h2 className='rb-5 mb-5 text-3xl font-bold md:mb-6 md:text-6xl lg:text-8xl'>
 									{content.title}
 								</h2>
 								<p className='md:text-base'>{content.description}</p>
@@ -61,10 +62,10 @@ export const Layout349 = (props: Layout349Props) => {
 							</div>
 							<div
 								className={clsx(
-									'fixed inset-0 -z-10 bg-zinc-100 transition-all duration-200 ease-linear',
+									'fixed inset-0 -z-10 bg-zinc-200 transition-all duration-200 ease-linear',
 									{
-										'opacity-0': activeSection === 4 || activeSection === 6,
-										'opacity-100': activeSection !== 5 && activeSection !== 7,
+										'opacity-0': activeSection === 6 || activeSection === 8,
+										'opacity-100': activeSection !== 6 && activeSection !== 8,
 									},
 								)}
 							/>
@@ -88,10 +89,6 @@ export const Layout349 = (props: Layout349Props) => {
 								)}
 								alt={content.title}
 							/>
-							<span
-								className={`bg-zinc-800 w-[348px] h-[348px] top-56 left-12 absolute rounded-lg ${
-									activeSection === index + 5 ? 'opacity-100' : 'opacity-0'
-								}`}></span>
 						</>
 					))}
 				</div>
