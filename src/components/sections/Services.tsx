@@ -1,14 +1,16 @@
 /** @format */
 
 import { Layout237 } from '../ui/Layout237';
+import { ContentServices } from '@/lib/hygraph/types-hygraph';
 
-export default function Services() {
+export default function Services(props: ContentServices) {
 	return (
 		<>
 			<Layout237
-				tagline='Eficiência'
-				heading='Nossos Serviços'
-				description='A Infinit é especializada em gestão de obras e reformas, oferecendo serviços de alta qualidade e segurança. Nossos profissionais experientes garantem que cada projeto seja executado de forma impecável, atendendo às necessidades dos clientes'
+				tagline={props.tagline}
+				heading={props.title}
+				description={props.description}
+				sections={props.servicelist}
 			/>
 		</>
 	);

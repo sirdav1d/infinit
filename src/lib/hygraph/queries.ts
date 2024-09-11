@@ -15,7 +15,6 @@ export const ThanksQuery = `query MyQuery {
   }
 }`;
 
-
 export const PoliticsQuery = `query MyQuery {
   politics {
     politic {
@@ -27,3 +26,45 @@ export const PoliticsQuery = `query MyQuery {
   }
 }`;
 
+export const HomepageQuery = `query MyQuery {
+  homepages {
+    headline
+    subheadline
+    herocta
+    heroimage {
+      url
+    }
+    sectionaboutheadline
+    sectionaboutsubheadline
+    sectionabouttagline
+    sectionaboutimage {
+      url
+    }
+    sectionaboutcta
+    servicesection {
+      tagline
+      title
+      description
+      servicelist {
+        id
+        icon {
+          url
+        }
+        title
+        description
+      }
+    }
+    features {
+      image {
+        url
+      }
+      tagline
+      title
+      id
+      description
+    }
+    sectionctaheadline
+    sectionctadescription
+    sectionctabtn
+  }
+}`;

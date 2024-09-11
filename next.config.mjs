@@ -7,6 +7,9 @@ const nextConfig = {
       hostname: 'images.unsplash.com',
       protocol: 'https'
     }, {
+      hostname: 'sa-east-1.graphassets.com',
+      protocol: 'https'
+    }, {
       hostname: 'img.freepik.com',
       protocol: 'https'
     }]

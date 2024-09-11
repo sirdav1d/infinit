@@ -2,13 +2,16 @@
 
 import React from 'react';
 import { Header81 } from '../ui/Header81';
+import { ContentHero } from '@/lib/hygraph/types-hygraph';
 
-export default function Hero() {
+export default function Hero(props: ContentHero) {
 	return (
 		<>
 			<Header81
-				heading='Soluções completas para obras e reformas'
-				description='A Infinit é especializada em gestão de obras e reformas, garantindo eficiência, qualidade e segurança em todos os projetos'
+				heading={props.headline}
+				description={props.subheadline}
+				button={props.herocta}
+				image={props.heroimage.url}
 			/>
 		</>
 	);

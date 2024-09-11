@@ -2,38 +2,31 @@
 
 'use client';
 
-import {
-	useScroll,
-	motion,
-	useTransform,
-	useSpring,
-	MotionValue,
-} from 'framer-motion';
 import { useMediaQuery } from '@relume_io/relume-ui';
-import type { ButtonProps } from '@relume_io/relume-ui';
-import { useRef } from 'react';
-import Image from 'next/image';
-import { Button } from './button';
+import {
+	motion,
+	MotionValue,
+	useScroll,
+	useSpring,
+	useTransform,
+} from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
-
-type ImageProps = {
-	src: string;
-	alt?: string;
-};
+import Image from 'next/image';
+import { useRef } from 'react';
+import { Button } from './button';
 
 type Props = {
-	image: ImageProps;
+	image: string;
 	heading: string;
 	description: string;
-	buttons: ButtonProps[];
+	button: string;
 };
 
 export type Header81Props = React.ComponentPropsWithoutRef<'section'> &
 	Partial<Props>;
 
 export const Header81 = (props: Header81Props) => {
-	const { heading, description, buttons, image } = {
-		...Header81Defaults,
+	const { heading, description, button, image } = {
 		...props,
 	} as Props;
 
@@ -63,7 +56,7 @@ export const Header81 = (props: Header81Props) => {
 						<Button
 							variant={'brand'}
 							className='text-lg flex gap-2 items-center group '>
-							Solicitar Orçamento
+							{button}
 							<ArrowUpRight
 								size={28}
 								className='group-hover:rotate-45 transition-all duration-200 ease-in'
@@ -86,7 +79,7 @@ const MotionImage = ({
 	isMobile,
 	width,
 }: {
-	image: ImageProps;
+	image: string;
 	isMobile: boolean;
 	width: MotionValue<string>;
 }) => (
@@ -97,8 +90,8 @@ const MotionImage = ({
 					<Image
 						width={1400}
 						height={800}
-						src={image.src}
-						alt={image.alt!}
+						src={image}
+						alt={'imagem de obra ilustrativa'}
 						className='absolute inset-0 size-full object-cover bg-blend-darken bg-zinc-700'
 					/>
 				</div>
@@ -111,8 +104,8 @@ const MotionImage = ({
 					<Image
 						width={1400}
 						height={900}
-						src={image.src}
-						alt={image.alt!}
+						src={image}
+						alt={'imagem de obra ilustrativa'}
 						className='absolute inset-0 size-full object-cover'
 					/>
 				</div>
@@ -120,14 +113,3 @@ const MotionImage = ({
 		)}
 	</div>
 );
-
-export const Header81Defaults: Header81Props = {
-	heading: 'Medium length hero heading goes here',
-	description:
-		'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.',
-	buttons: [{ title: 'Button' }],
-	image: {
-		src: 'https://images.unsplash.com/photo-1669003985935-a52ce9d86756?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-		alt: 'Relume placeholder image',
-	},
-};

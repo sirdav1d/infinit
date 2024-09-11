@@ -2,15 +2,17 @@
 
 import React from 'react';
 import { Layout192 } from '../ui/Layout192';
+import { ContentAbout } from '@/lib/hygraph/types-hygraph';
 
-export default function About() {
+export default function About(props: ContentAbout) {
 	return (
 		<>
 			<Layout192
-				tagline='Descubra'
-				heading='Conheça mais sobre a Infinit e nossos serviços'
-				description='A Infinit é uma empresa especializada na gestão de obras e reformas, oferecendo serviços de alta qualidade e segurança. Com uma equipe experiente e dedicada, garantimos a eficiência em todas as etapas dos projetos realizados. Além disso, também somos reconhecidos pela administração de condomínios, proporcionando soluções completas que incluem serviços de síndico profissional, limpeza e zeladoria'
-			
+				tagline={props.sectionabouttagline}
+				heading={props.sectionaboutheadline}
+				description={props.sectionaboutsubheadline}
+				image={props.sectionaboutimage.url}
+				cta={props.sectionaboutcta}
 			/>
 		</>
 	);

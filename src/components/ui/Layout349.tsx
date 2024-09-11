@@ -2,213 +2,100 @@
 
 'use client';
 
-import { Button } from '@relume_io/relume-ui';
-import type { ButtonProps } from '@relume_io/relume-ui';
-import { useEffect, useState } from 'react';
-import { RxChevronRight } from 'react-icons/rx';
+import { HygraphFeatures } from '@/lib/hygraph/types-hygraph';
 import clsx from 'clsx';
 import Image from 'next/image';
-
-type ImageProps = {
-	src: string;
-	alt?: string;
-};
-
-type ContentProps = {
-	tagline: string;
-	heading: string;
-	description: string;
-	buttons: ButtonProps[];
-	image: ImageProps;
-};
+import { useEffect, useState } from 'react';
 
 type Props = {
-	contents: ContentProps[];
-	images: ImageProps[];
+	contents: HygraphFeatures[];
 };
 
 export type Layout349Props = React.ComponentPropsWithoutRef<'section'> &
 	Partial<Props>;
 
 export const Layout349 = (props: Layout349Props) => {
-	const { contents, images } = {
-		...Layout349Defaults,
+	const { contents } = {
 		...props,
 	} as Props;
 
-	const [activeSection, setActiveSection] = useState(0);
+	const [activeSection, setActiveSection] = useState(5);
+
+	const handleScroll = () => {
+		const sectionHeight = window.innerHeight;
+		const currentScrollPosition = window.scrollY + sectionHeight / 2;
+		const currentSection = Math.floor(currentScrollPosition / sectionHeight);
+		setActiveSection(currentSection);
+	};
 
 	useEffect(() => {
-		const handleScroll = () => {
-			const sectionHeight = window.innerHeight;
-			const currentScrollPosition = window.scrollY + sectionHeight / 2;
-			const currentSection = Math.floor(currentScrollPosition / sectionHeight);
-			setActiveSection(currentSection);
-		};
 		window.addEventListener('scroll', handleScroll);
 		return () => window.removeEventListener('scroll', handleScroll);
-	}, []);
+	}, [activeSection]);
 
 	return (
 		<section
 			id='relume'
 			className='px-[5%]'>
-			<div className='container relative grid items-stretch gap-x-12 py-16 sm:gap-y-12 md:grid-cols-2 md:py-0 lg:gap-x-20'>
+			<div className='container relative grid items-stretch gap-x-12 py-10 sm:gap-y-12 md:grid-cols-2 md:py-0 lg:gap-x-20'>
 				<div className='grid grid-cols-1 gap-12 md:block'>
-					{contents.map((content, index) => (
-						<div key={index}>
+					{contents.map((content) => (
+						<div key={content.id}>
 							<div className='flex flex-col items-start justify-center md:h-screen'>
-								<p className='mb-3 font-semibold md:mb-4'>{content.tagline}</p>
-								<h2 className='rb-5 mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl'>
-									{content.heading}
+								<p className='mb-3 font-semibold md:mb-4 text-red-600'>
+									{content.tagline}
+								</p>
+								<h2 className='rb-5 mb-5 text-4xl font-bold md:mb-6 md:text-7xl lg:text-8xl'>
+									{content.title}
 								</h2>
-								<p className='md:text-md'>{content.description}</p>
-								<div className='mt-6 flex items-center gap-x-4 md:mt-8'>
-									{content.buttons.map((button, index) => (
-										<Button
-											key={index}
-											{...button}>
-											{button.title}
-										</Button>
-									))}
-								</div>
-								<div className='mt-10 block w-full md:hidden'>
+								<p className='md:text-base'>{content.description}</p>
+								<div className='mt-10 block w-full md:hidden rounded-md'>
 									<Image
 										width={400}
 										height={400}
-										src={content.image.src}
-										className='w-full'
-										alt={'image de test'}
+										src={content.image.url}
+										className='w-full object-cover rounded-md'
+										alt={content.title}
 									/>
 								</div>
 							</div>
 							<div
 								className={clsx(
-									'fixed inset-0 -z-10 bg-[#e5e5e5] transition-opacity duration-300',
+									'fixed inset-0 -z-10 bg-zinc-100 transition-all duration-200 ease-linear',
 									{
-										'opacity-100': activeSection === 0 || activeSection === 2,
-										'opacity-0': activeSection !== 0 && activeSection !== 2,
+										'opacity-0': activeSection === 4 || activeSection === 6,
+										'opacity-100': activeSection !== 5 && activeSection !== 7,
 									},
 								)}
 							/>
 						</div>
 					))}
 				</div>
-				<div className='sticky  h-screen md:flex md:flex-col md:items-center md:justify-center'>
-					{images.map((image, index) => (
-						<Image
-							width={400}
-							height={400}
-							key={index}
-							src={image.src}
-							className={clsx('absolute w-full', {
-								'opacity-100': activeSection === index,
-								'opacity-0': activeSection !== index,
-							})}
-							alt={'imagem test'}
-						/>
+				<div className=' hidden h-screen md:flex md:flex-col md:items-center md:justify-center sticky top-0'>
+					{contents.map((content, index) => (
+						<>
+							<Image
+								width={400}
+								height={400}
+								key={content.id}
+								src={content.image.url}
+								className={clsx(
+									'absolute w-[440px] h-[400px] object-cover z-50 rounded-md drop-shadow-xl',
+									{
+										'opacity-100': activeSection === index + 5,
+										'opacity-0': activeSection !== index + 5,
+									},
+								)}
+								alt={content.title}
+							/>
+							<span
+								className={`bg-zinc-800 w-[348px] h-[348px] top-56 left-12 absolute rounded-lg ${
+									activeSection === index + 5 ? 'opacity-100' : 'opacity-0'
+								}`}></span>
+						</>
 					))}
 				</div>
 			</div>
 		</section>
 	);
-};
-
-export const Layout349Defaults: Layout349Props = {
-	contents: [
-		{
-			tagline: 'Tagline',
-			heading: 'Medium length section heading goes here',
-			description:
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.',
-			buttons: [
-				{ title: 'Button', variant: 'secondary' },
-				{
-					title: 'Button',
-					variant: 'link',
-					size: 'link',
-					iconRight: <RxChevronRight />,
-				},
-			],
-			image: {
-				src: 'https://d22po4pjz3o32e.cloudfront.net/placeholder-image-1.svg',
-				alt: 'Relume placeholder image 1',
-			},
-		},
-		{
-			tagline: 'Tagline',
-			heading: 'Medium length section heading goes here',
-			description:
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.',
-			buttons: [
-				{ title: 'Button', variant: 'secondary' },
-				{
-					title: 'Button',
-					variant: 'link',
-					size: 'link',
-					iconRight: <RxChevronRight />,
-				},
-			],
-			image: {
-				src: 'https://d22po4pjz3o32e.cloudfront.net/placeholder-image-2.svg',
-				alt: 'Relume placeholder image 2',
-			},
-		},
-		{
-			tagline: 'Tagline',
-			heading: 'Medium length section heading goes here',
-			description:
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.',
-			buttons: [
-				{ title: 'Button', variant: 'secondary' },
-				{
-					title: 'Button',
-					variant: 'link',
-					size: 'link',
-					iconRight: <RxChevronRight />,
-				},
-			],
-			image: {
-				src: 'https://d22po4pjz3o32e.cloudfront.net/placeholder-image-3.svg',
-				alt: 'Relume placeholder image 3',
-			},
-		},
-		{
-			tagline: 'Tagline',
-			heading: 'Medium length section heading goes here',
-			description:
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.',
-			buttons: [
-				{ title: 'Button', variant: 'secondary' },
-				{
-					title: 'Button',
-					variant: 'link',
-					size: 'link',
-					iconRight: <RxChevronRight />,
-				},
-			],
-			image: {
-				src: 'https://d22po4pjz3o32e.cloudfront.net/placeholder-image-4.svg',
-				alt: 'Relume placeholder image 4',
-			},
-		},
-	],
-	images: [
-		{
-			src: 'https://d22po4pjz3o32e.cloudfront.net/placeholder-image-1.svg',
-			alt: 'Relume placeholder image 1',
-		},
-		{
-			src: 'https://d22po4pjz3o32e.cloudfront.net/placeholder-image-2.svg',
-			alt: 'Relume placeholder image 2',
-		},
-		{
-			src: 'https://d22po4pjz3o32e.cloudfront.net/placeholder-image-3.svg',
-			alt: 'Relume placeholder image 3',
-		},
-		{
-			src: 'https://d22po4pjz3o32e.cloudfront.net/placeholder-image-4.svg',
-			alt: 'Relume placeholder image 4',
-		},
-	],
 };
