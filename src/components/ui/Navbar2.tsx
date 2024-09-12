@@ -44,7 +44,7 @@ export const Navbar2 = (props: Navbar2Props) => {
 	const path = usePathname();
 
 	return (
-		<nav className='flex md:fixed w-full items-center py-4 z-50 bg-zinc-50/60 backdrop-blur-md lg:px-[5%] shadow-small '>
+		<nav className='flex items-center py-4 z-50 bg-zinc-100 backdrop-blur-md lg:px-[5%] shadow-small '>
 			<div
 				className={` ${
 					path !== '/'
@@ -57,7 +57,7 @@ export const Navbar2 = (props: Navbar2Props) => {
 					} px-[5%] md:min-h-18 lg:min-h-full lg:px-0`}>
 					<a href={'/'}>
 						<Image
-							width={64}
+							width={56}
 							height={40}
 							src={logo}
 							alt={'logo infiti multi gestão'}

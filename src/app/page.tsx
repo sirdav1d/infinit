@@ -12,6 +12,7 @@ import { THomepage } from '@/lib/hygraph/types-hygraph';
 export default async function Home() {
 	const resp: THomepage = await fetchHygraph(HomepageQuery);
 	const data = resp.homepages[0];
+
 	return (
 		<>
 			<Hero
@@ -40,7 +41,14 @@ export default async function Home() {
 				servicelist={data.servicesection.servicelist}
 			/>
 			<Features features={data.features} />
-			<CTA />
+			<CTA
+				sectionctaheadline={data.sectionctaheadline}
+				sectionctadescription={data.sectionctadescription}
+				sectionctabtn={data.sectionctabtn}
+				sectionctaimage={{
+					url: data.sectionctaimage.url,
+				}}
+			/>
 		</>
 	);
 }

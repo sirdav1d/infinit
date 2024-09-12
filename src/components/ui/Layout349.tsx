@@ -46,10 +46,10 @@ export const Layout349 = (props: Layout349Props) => {
 								<p className='mb-3 font-semibold md:mb-4 text-red-600'>
 									{content.tagline}
 								</p>
-								<h2 className='rb-5 mb-5 text-3xl font-bold md:mb-6 md:text-6xl lg:text-8xl'>
+								<h2 className='rb-5 mb-5 text-3xl font-bold md:mb-6 md:text-5xl lg:text-7xl capitalize'>
 									{content.title}
 								</h2>
-								<p className='md:text-base'>{content.description}</p>
+								<p className='md:text-base max-w-sm'>{content.description}</p>
 								<div className='mt-10 block w-full md:hidden rounded-md'>
 									<Image
 										width={400}

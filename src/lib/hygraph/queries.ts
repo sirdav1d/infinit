@@ -66,5 +66,8 @@ export const HomepageQuery = `query MyQuery {
     sectionctaheadline
     sectionctadescription
     sectionctabtn
+    sectionctaimage{
+      url
+    }
   }
 }`;

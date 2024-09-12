@@ -75,10 +75,11 @@ export type ContentFeatures = {
 	features: HygraphFeatures[];
 };
 
-export type CTA = {
+export type TCTA = {
 	sectionctaheadline: string;
 	sectionctadescription: string;
 	sectionctabtn: string;
+	sectionctaimage: HygraphImage;
 };
 
 export type homepageContent = {
@@ -96,6 +97,7 @@ export type homepageContent = {
 	sectionctaheadline: string;
 	sectionctadescription: string;
 	sectionctabtn: string;
+	sectionctaimage: HygraphImage;
 };
 
 export type THomepage = {
