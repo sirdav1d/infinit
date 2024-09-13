@@ -32,6 +32,7 @@ export interface Culture {
 	title: string;
 	description: string;
 	icon: HygraphImage;
+	image: HygraphImage;
 }
 
 export interface Timeline {

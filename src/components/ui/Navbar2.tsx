@@ -45,7 +45,7 @@ export const Navbar2 = (props: Navbar2Props) => {
 	const path = usePathname();
 
 	return (
-		<nav className='top-0 fixed w-full py-4 z-50 bg-white/70 backdrop-blur-sm lg:px-[5%] shadow-small '>
+		<nav className='top-0 fixed w-full py-4 z-50 bg-white/70 backdrop-blur-md px-4 lg:px-[5%] shadow-small '>
 			<div className='flex flex-col items-center justify-center'>
 				<Banner14 />
 				<div className='flex items-center justify-between w-full max-w-xxl mx-auto size-full'>

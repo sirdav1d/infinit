@@ -19,8 +19,23 @@ export default async function page() {
 				slot2={data.herosubheadline}
 				video={data.videohero.url}
 			/>
-			<Layout507 />
-			<Timeline2 />
+			<Layout507
+				heading={data.sectionculturetitle}
+				tagline={data.sectionculturetagline}
+				description={data.sectionculturedescription}
+				defaultValue={'tab-1'}
+				tabs={[
+					{ value: 'tab-1', content: data.culturelist[0], trigger: 'Missão' },
+					{ value: 'tab-2', trigger: 'Visão', content: data.culturelist[1] },
+					{ value: 'tab-3', trigger: 'Valores', content: data.culturelist[2] },
+				]}
+			/>
+			<Timeline2
+				heading={data.sectiontimelineheadline}
+				description={data.sectiontimelinesubheadline}
+				tagline={data.sectiontimelinetagline}
+				timelines={data.timelinelist}
+			/>
 			<CTA
 				sectionctaheadline={data.sectionctaheadline}
 				sectionctadescription={data.sectionctasubheadline}
