@@ -71,3 +71,41 @@ export const HomepageQuery = `query MyQuery {
     }
   }
 }`;
+
+export const AboutQuery = `query MyQuery {
+  aboutpages {
+    heroheadline
+    herosubheadline
+    herocta
+    videohero {
+      url
+    }
+    sectionculturetagline
+    sectionculturetitle
+    sectionculturedescription
+    culturelist {
+      id
+      title
+      description
+      icon {
+        url
+      }
+    }
+    sectiontimelinetagline
+    sectiontimelineheadline
+    sectiontimelinesubheadline
+    timelinelist {
+      id
+      title
+      description
+      date
+    }
+    sectionctaheadline
+    sectionctasubheadline
+    sectionctabtn
+    sectionctaimage {
+      url
+    }
+    
+  }
+}`;

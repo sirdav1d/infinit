@@ -27,7 +27,6 @@ export default function RootLayout({
 	return (
 		<html lang='pt-BR'>
 			<body className={montserrat.className}>
-				<Banner14 />
 				<Navbar2 />
 				{children}
 				<Footer4 />

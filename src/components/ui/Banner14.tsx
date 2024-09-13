@@ -32,9 +32,8 @@ export const Banner14 = (props: Banner14Props) => {
 
 	return (
 		<section
-			id='relume'
 			ref={sectionRef}
-			className='overflow-hidden'>
+			className='overflow-hidden z-50'>
 			<div className='flex whitespace-nowrap border-b border-t border-border-primary'>
 				<div className='flex w-full items-center overflow-hidden whitespace-nowrap py-4'>
 					{Array(2)

@@ -7,7 +7,7 @@ import Hero from '@/components/sections/Hero';
 import Services from '@/components/sections/Services';
 import { fetchHygraph } from '@/lib/hygraph/fetch-hygraph';
 import { HomepageQuery } from '@/lib/hygraph/queries';
-import { THomepage } from '@/lib/hygraph/types-hygraph';
+import { THomepage } from '@/lib/hygraph/types/homepage-types';
 
 export default async function Home() {
 	const resp: THomepage = await fetchHygraph(HomepageQuery);

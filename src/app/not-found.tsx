@@ -2,7 +2,7 @@
 
 import { fetchHygraph } from '@/lib/hygraph/fetch-hygraph';
 import React from 'react';
-import { TNotFound } from '@/lib/hygraph/types-hygraph';
+import { TNotFound } from '@/lib/hygraph/types/notfoundpage-types';
 import { ErrorQuery } from '@/lib/hygraph/queries';
 import dynamic from 'next/dynamic';
 const LottieComponent = dynamic(

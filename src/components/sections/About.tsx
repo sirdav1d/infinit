@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Layout192 } from '../ui/Layout192';
-import { ContentAbout } from '@/lib/hygraph/types-hygraph';
+import { ContentAbout } from '@/lib/hygraph/types/homepage-types';
 
 export default function About(props: ContentAbout) {
 	return (

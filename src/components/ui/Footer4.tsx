@@ -112,7 +112,7 @@ export const Footer4 = (props: Footer4Props) => {
 				</div>
 				<div className='h-px w-full bg-zinc-700/30 mt-5' />
 				<div className='flex flex-col-reverse items-center justify-center justify-items-center pb-4 pt-6 text-sm md:flex-row md:gap-x-6 md:pb-0 md:pt-8'>
-					<p className='mt-8 md:mt-0'>{footerText}</p>
+					<p className='mt-8 md:mt-0 text-center'>{footerText}</p>
 					<ul className='grid grid-flow-row grid-cols-[max-content] items-center justify-center justify-items-center gap-x-0 gap-y-4 text-sm md:grid-flow-col md:gap-x-6 md:gap-y-0'>
 						{footerLinks.map((link, index) => (
 							<li
@@ -149,9 +149,9 @@ export const Footer4Defaults: Footer4Props = {
 		},
 	],
 	socialMediaLinks: [
-		{ url: '#', icon: <BiLogoFacebookCircle className='size-6' /> },
-		{ url: '#', icon: <BiLogoInstagram className='size-6' /> },
-		{ url: '#', icon: <BiLogoLinkedinSquare className='size-6' /> },
+		{ url: '#', icon: <BiLogoFacebookCircle className='size-8' /> },
+		{ url: '#', icon: <BiLogoInstagram className='size-8' /> },
+		{ url: '#', icon: <BiLogoLinkedinSquare className='size-8' /> },
 	],
 	footerText: '© 2024 Tars Projetos. Todos os direitos reservados.',
 	footerLinks: [

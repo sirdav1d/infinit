@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { PoliticsQuery } from '@/lib/hygraph/queries';
-import { TPolitics } from '@/lib/hygraph/types-hygraph';
+import { TPolitics } from '@/lib/hygraph/types/politicspage-types';
 import { fetchHygraph } from '@/lib/hygraph/fetch-hygraph';
 import { RichText } from '@graphcms/rich-text-react-renderer';
 

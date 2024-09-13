@@ -1,7 +1,7 @@
 /** @format */
 
 import { Layout237 } from '../ui/Layout237';
-import { ContentServices } from '@/lib/hygraph/types-hygraph';
+import { ContentServices } from '@/lib/hygraph/types/homepage-types';
 
 export default function Services(props: ContentServices) {
 	return (

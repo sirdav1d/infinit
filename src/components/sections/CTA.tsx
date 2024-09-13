@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Cta9 } from '../ui/CTA9';
-import { TCTA } from '@/lib/hygraph/types-hygraph';
+import { TCTA } from '@/lib/hygraph/types/homepage-types';
 
 export default function CTA(props: TCTA) {
 	return (

@@ -11,6 +11,7 @@ import logo from '@/assets/logo.png';
 import Image from 'next/image';
 import { Button } from './button';
 import { usePathname } from 'next/navigation';
+import { Banner14 } from './Banner14';
 
 type ImageProps = {
 	url?: string;
@@ -44,17 +45,10 @@ export const Navbar2 = (props: Navbar2Props) => {
 	const path = usePathname();
 
 	return (
-		<nav className='flex items-center py-4 z-50 bg-zinc-100 backdrop-blur-md lg:px-[5%] shadow-small '>
-			<div
-				className={` ${
-					path !== '/'
-						? 'flex items-center justify-center w-full max-w-xxl mx-auto'
-						: 'mx-auto size-full w-full lg:grid lg:grid-cols-[0.375fr_1fr_0.375fr] lg:items-center max-w-xxl lg:justify-between lg:gap-4'
-				}`}>
-				<div
-					className={`flex w-full mx-auto min-h-16 items-center ${
-						path !== '/' ? 'justify-center' : 'justify-between'
-					} px-[5%] md:min-h-18 lg:min-h-full lg:px-0`}>
+		<nav className='top-0 fixed w-full py-4 z-50 bg-white/70 backdrop-blur-sm lg:px-[5%] shadow-small '>
+			<div className='flex flex-col items-center justify-center'>
+				<Banner14 />
+				<div className='flex items-center justify-between w-full max-w-xxl mx-auto size-full'>
 					<a href={'/'}>
 						<Image
 							width={56}
@@ -63,49 +57,46 @@ export const Navbar2 = (props: Navbar2Props) => {
 							alt={'logo infiti multi gestão'}
 						/>
 					</a>
+
+					<motion.div
+						variants={{
+							open: {
+								height: 'var(--height-open, 100dvh)',
+							},
+							close: {
+								height: 'var(--height-closed, 0)',
+							},
+						}}
+						animate={isMobileMenuOpen ? 'open' : 'close'}
+						initial='close'
+						exit='close'
+						transition={{ duration: 0.4 }}
+						className='overflow-hidden px-[5%] text-center lg:flex lg:items-center lg:justify-center lg:px-0 lg:[--height-closed:auto] lg:[--height-open:auto]'>
+						{navLinks.map((navLink, index) => (
+							<div
+								key={index}
+								className='first:pt-4 lg:first:pt-0 '>
+								{navLink.subMenuLinks && navLink.subMenuLinks.length > 0 ? (
+									<SubMenu
+										navLink={navLink}
+										isMobile={isMobile}
+									/>
+								) : (
+									<a
+										href={navLink.url}
+										className='block py-3 text-md lg:px-4 lg:py-2 lg:text-base font-semibold hover:text-blue-600 transition-all ease-linear duration-200'>
+										{navLink.title}
+									</a>
+								)}
+							</div>
+						))}
+					</motion.div>
+					<div className='hidden justify-self-end lg:block'>
+						<Button className='border-2 bg-transparent border-blue-500 hover:bg-blue-600 font-semibold text-blue-600 transition-all ease-linear duration-200 hover:text-zinc-50 text-base'>
+							Área Do Cliente
+						</Button>
+					</div>
 				</div>
-				{path == '/' ? (
-					<>
-						<motion.div
-							variants={{
-								open: {
-									height: 'var(--height-open, 100dvh)',
-								},
-								close: {
-									height: 'var(--height-closed, 0)',
-								},
-							}}
-							animate={isMobileMenuOpen ? 'open' : 'close'}
-							initial='close'
-							exit='close'
-							transition={{ duration: 0.4 }}
-							className='overflow-hidden px-[5%] text-center lg:flex lg:items-center lg:justify-center lg:px-0 lg:[--height-closed:auto] lg:[--height-open:auto]'>
-							{navLinks.map((navLink, index) => (
-								<div
-									key={index}
-									className='first:pt-4 lg:first:pt-0 '>
-									{navLink.subMenuLinks && navLink.subMenuLinks.length > 0 ? (
-										<SubMenu
-											navLink={navLink}
-											isMobile={isMobile}
-										/>
-									) : (
-										<a
-											href={navLink.url}
-											className='block py-3 text-md lg:px-4 lg:py-2 lg:text-base font-semibold hover:text-blue-600 transition-all ease-linear duration-200'>
-											{navLink.title}
-										</a>
-									)}
-								</div>
-							))}
-						</motion.div>
-						<div className='hidden justify-self-end lg:block'>
-							<Button className='border-2 bg-transparent border-blue-500 hover:bg-blue-600 font-semibold text-blue-600 transition-all ease-linear duration-200 hover:text-zinc-50 text-base'>
-								Área Do Cliente
-							</Button>
-						</div>
-					</>
-				) : null}
 			</div>
 		</nav>
 	);

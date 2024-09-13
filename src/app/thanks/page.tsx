@@ -1,7 +1,7 @@
 /** @format */
 
 import React from 'react';
-import { TThanks } from '@/lib/hygraph/types-hygraph';
+import { TThanks } from '@/lib/hygraph/types/thankspage-types';
 import { ThanksQuery } from '@/lib/hygraph/queries';
 import { fetchHygraph } from '@/lib/hygraph/fetch-hygraph';
 import dynamic from 'next/dynamic';
