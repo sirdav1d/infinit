@@ -2,7 +2,7 @@
 
 'use client';
 
-import { HygraphFeatures } from '@/lib/hygraph/types-hygraph';
+import { HygraphFeatures } from '@/lib/hygraph/types/homepage-types';
 import clsx from 'clsx';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';

@@ -1,14 +1,12 @@
 /** @format */
 
-import { FaXTwitter } from 'react-icons/fa6';
+import logo from '@/assets/logo.png';
+import Image from 'next/image';
 import {
 	BiLogoFacebookCircle,
 	BiLogoInstagram,
-	BiLogoLinkedinSquare,
-	BiLogoYoutube,
+	BiLogoLinkedinSquare
 } from 'react-icons/bi';
-import logo from '@/assets/logo.png';
-import Image from 'next/image';
 
 type ImageProps = {
 	url?: string;

@@ -1,10 +1,8 @@
 /** @format */
 
-import type { ButtonProps } from '@relume_io/relume-ui';
 import Image from 'next/image';
-import { RxChevronRight } from 'react-icons/rx';
-import { Button } from './button';
 import Link from 'next/link';
+import { Button } from './button';
 
 type Props = {
 	tagline: string;
