@@ -1,6 +1,6 @@
 /** @format */
 
-import { HygraphServicesList } from '@/lib/hygraph/types-hygraph';
+import { HygraphServicesList } from '@/lib/hygraph/types/homepage-types';
 import Image from 'next/image';
 
 type Props = {
