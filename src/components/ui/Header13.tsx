@@ -26,11 +26,12 @@ export const Header13 = (props: Header13SlotProps) => {
 	} as Props;
 	return (
 		<section className='flex h-full min-h-screen items-center justify-start gap-5 md:gap-14 flex-col shadow-small rounded-lg'>
-			<div className='relative w-full h-[440px]  md:h-[580px] xxl:h-[72vh] flex-0 bg-zinc-950/50'>
+			<div className='relative w-full h-[440px]  md:h-[580px] xxl:h-[73vh] flex-0 bg-zinc-950/20'>
 				<div className='absolute w-full top-0 left-0 h-full -z-10'>
 					<video
-						className='object-cover object-center w-full h-[440px]  md:h-[580px] xxl:h-[72vh] '
+						className='object-cover object-center w-full h-[440px]  md:h-[580px] xxl:h-[73vh] '
 						autoPlay
+						preload='auto'
 						muted
 						loop>
 						<source

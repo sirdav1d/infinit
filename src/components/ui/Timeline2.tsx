@@ -33,7 +33,7 @@ export const Timeline2 = (props: Timeline2Props) => {
 		<section className='px-[5%] py-16 md:py-24 lg:py-28'>
 			<div className='container'>
 				<div className='relative grid auto-cols-fr grid-cols-1 items-start justify-center gap-6 sm:gap-12 md:grid-cols-2 md:gap-24 lg:gap-32'>
-					<div className='relative top-0 z-10 md:sticky md:top-40 md:z-auto md:pr-4'>
+					<div className='relative top-0 z-10 md:sticky md:top-60 md:z-auto md:pr-4'>
 						<p className='mb-3 font-semibold md:mb-4 text-red-600'>{tagline}</p>
 						<h1 className='mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl'>
 							{heading}

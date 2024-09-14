@@ -62,10 +62,10 @@ export const Layout349 = (props: Layout349Props) => {
 							</div>
 							<div
 								className={clsx(
-									'fixed inset-0 -z-10 bg-zinc-200 transition-all duration-200 ease-linear',
+									'fixed inset-0 -z-10 bg-zinc-100 transition-all duration-200 ease-linear',
 									{
-										'opacity-0': activeSection === 6 || activeSection === 8,
-										'opacity-100': activeSection !== 6 && activeSection !== 8,
+										'opacity-0': activeSection === 5 || activeSection === 7,
+										'opacity-100': activeSection !== 5 && activeSection !== 7,
 									},
 								)}
 							/>
@@ -76,7 +76,7 @@ export const Layout349 = (props: Layout349Props) => {
 					{contents.map((content, index) => (
 						<>
 							<Image
-								width={400}
+								width={440}
 								height={400}
 								key={content.id}
 								src={content.image.url}
