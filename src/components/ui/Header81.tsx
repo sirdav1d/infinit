@@ -14,6 +14,7 @@ import { ArrowUpRight } from 'lucide-react';
 import Image from 'next/image';
 import { useRef } from 'react';
 import { Button } from './button';
+import Link from 'next/link';
 
 type Props = {
 	image: string;
@@ -53,15 +54,19 @@ export const Header81 = (props: Header81Props) => {
 						{description}
 					</p>
 					<div className='mt-6 flex gap-x-4 md:mt-8'>
-						<Button
-							variant={'brand'}
-							className='text-lg flex gap-2 items-center group '>
-							{button}
-							<ArrowUpRight
-								size={28}
-								className='group-hover:rotate-45 transition-all duration-200 ease-in'
-							/>
-						</Button>
+						<Link
+							prefetch
+							href={'/contact#contact'}>
+							<Button
+								variant={'brand'}
+								className='text-lg flex gap-2 items-center group '>
+								{button}
+								<ArrowUpRight
+									size={28}
+									className='group-hover:rotate-45 transition-all duration-200 ease-in'
+								/>
+							</Button>
+						</Link>
 					</div>
 				</div>
 				<MotionImage

@@ -10,7 +10,6 @@ export type Header64Props = React.ComponentPropsWithoutRef<'section'> &
 
 export const Header64 = (props: Header64Props) => {
 	const { heading, description } = {
-		...Header64Defaults,
 		...props,
 	} as Props;
 	return (
@@ -23,10 +22,4 @@ export const Header64 = (props: Header64Props) => {
 			</div>
 		</section>
 	);
-};
-
-export const Header64Defaults: Header64Props = {
-	heading: 'Short heading here',
-	description:
-		'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.',
 };

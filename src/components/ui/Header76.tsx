@@ -4,6 +4,7 @@ import { ArrowUpRight } from 'lucide-react';
 import { Button } from './button';
 import { HeroImage } from '@/lib/hygraph/types/projectpage-type';
 import Image from 'next/image';
+import Link from 'next/link';
 
 type Props = {
 	heading: string;
@@ -27,15 +28,19 @@ export const Header76 = (props: Header76Props) => {
 				</h1>
 				<p className='md:text-md'>{description}</p>
 				<div className='mt-6 flex gap-x-4 md:mt-8'>
-					<Button
-						variant={'brand'}
-						className='text-lg flex gap-2 items-center group '>
-						{button}
-						<ArrowUpRight
-							size={28}
-							className='group-hover:rotate-45 transition-all duration-200 ease-in'
-						/>
-					</Button>
+					<Link
+						prefetch
+						href={'/contact#contact'}>
+						<Button
+							variant={'brand'}
+							className='text-lg flex gap-2 items-center group '>
+							{button}
+							<ArrowUpRight
+								size={28}
+								className='group-hover:rotate-45 transition-all duration-200 ease-in'
+							/>
+						</Button>
+					</Link>
 				</div>
 			</div>
 			<div className='h-[30rem] overflow-hidden pl-[5vw] pr-[5vw] md:h-[40rem] lg:h-screen lg:pl-0'>

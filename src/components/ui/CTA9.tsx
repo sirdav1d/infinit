@@ -35,11 +35,13 @@ export const Cta9 = (props: Cta9Props) => {
 					</div>
 				</div>
 				<div className='flex items-start justify-start gap-4 mt-5'>
-					<Link href='/contact'>
+					<Link
+						prefetch
+						href={'/contact#contact'}>
 						<Button
 							variant={'brand'}
-							className='md:text-lg flex gap-2 items-center group '>
-							{cta}
+							className='text-lg flex gap-2 items-center group '>
+							Solicitar Contato
 							<ArrowUpRight
 								size={28}
 								className='group-hover:rotate-45 transition-all duration-200 ease-in'
