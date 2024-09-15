@@ -20,11 +20,9 @@ export const Header76 = (props: Header76Props) => {
 		...props,
 	} as Props;
 	return (
-		<section
-			id='relume'
-			className='grid grid-cols-1 gap-y-16 pt-16 md:grid-flow-row md:pt-24 lg:grid-flow-col lg:grid-cols-2 lg:items-center lg:pt-0'>
-			<div className='mx-[5%] max-w-[40rem] justify-self-start lg:ml-[5vw] lg:mr-20 lg:justify-self-end'>
-				<h1 className='mb-5 text-6xl font-bold md:mb-6 md:text-9xl lg:text-10xl'>
+		<section className='grid grid-cols-1 gap-y-16 pt-16 md:grid-flow-row md:pt-24 lg:grid-flow-col lg:grid-cols-2 lg:items-center lg:pt-0'>
+			<div className='mx-[5%] max-w-[40rem] justify-self-start lg:ml-[5vw] lg:mr-20 lg:justify-self-end mt-40'>
+				<h1 className='mb-5 text-4xl font-bold md:mb-6 md:text-7xl lg:text-10xl'>
 					{heading}
 				</h1>
 				<p className='md:text-md'>{description}</p>
