@@ -29,7 +29,7 @@ export const Cta9 = (props: Cta9Props) => {
 						<h2 className='mb-3 text-4xl capitalize font-bold leading-[1.2] text-text-alternative md:mb-4 md:text-5xl lg:text-8xl'>
 							{heading}
 						</h2>
-						<p className='text-text-alternative font-medium  md:text-base xl:text-lg max-w-sm mx-auto'>
+						<p className='text-text-alternative font-medium  md:text-base xl:text-lg max-w-md mx-auto'>
 							{description}
 						</p>
 					</div>
@@ -56,7 +56,7 @@ export const Cta9 = (props: Cta9Props) => {
 					className='size-full object-cover bg-fixed object-bottom'
 					alt={heading}
 				/>
-				<div className='absolute inset-0 bg-zinc-950/70' />
+				<div className='absolute inset-0 bg-zinc-950/60' />
 			</div>
 		</section>
 	);

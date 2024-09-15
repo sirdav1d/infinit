@@ -109,3 +109,50 @@ export const AboutQuery = `query MyQuery {
     
   }
 }`;
+
+export const ProjectsQuery = `query MyQuery {
+  projectspages {
+    heroheadline
+    herocta
+    herosubheadline
+    heroImages {
+      id
+      url
+    }
+    servicesection {
+      tagline
+      title
+      description
+      servicelist {
+        id
+        title
+        icon {
+          url
+        }
+        description
+      }
+    }
+    sectionprojectstagline
+    sectionprojectstitle
+    sectionprojectsdescription
+    projectslist {
+      id
+      slug
+      title
+      description
+      logo {
+        url
+      }
+      galery {
+        id
+        url
+      }
+    }
+    sectionctaheadline
+    sectionctasubheadline
+    sectionctabtn
+    sectionctaimage {
+      url
+    }
+  }
+}`;

@@ -4,32 +4,25 @@
 
 import { Heading, Text } from '@relume_io/relume-ui';
 
-type ImageProps = {
-	src: string;
-	alt?: string;
-};
-
 type Props = {
 	slot1: string;
 	slot2: string;
 	video: string;
-	image: ImageProps;
 };
 
 export type Header13SlotProps = React.ComponentPropsWithoutRef<'section'> &
 	Partial<Props>;
 
 export const Header13 = (props: Header13SlotProps) => {
-	const { slot1, slot2, video, image } = {
-		...Header13SlotDefaults,
+	const { slot1, slot2, video } = {
 		...props,
 	} as Props;
 	return (
-		<section className='flex h-full min-h-screen items-center justify-start gap-5 md:gap-14 flex-col shadow-small rounded-lg'>
-			<div className='relative w-full h-[440px]  md:h-[580px] xxl:h-[73vh] flex-0 bg-zinc-950/20'>
+		<section className='flex min-h-screen h-full items-center justify-between md:justify-start gap-5 xxl:gap-8 flex-col shadow-small rounded-3xl'>
+			<div className='relative w-full  h-[64vh] xxl:h-[79vh] md:flex-0 bg-zinc-950/20 flex-0'>
 				<div className='absolute w-full top-0 left-0 h-full -z-10'>
 					<video
-						className='object-cover object-center w-full h-[440px]  md:h-[580px] xxl:h-[73vh] '
+						className='object-cover object-center w-full h-[64vh] xxl:h-[79vh] '
 						autoPlay
 						preload='auto'
 						muted
@@ -58,12 +51,4 @@ export const Header13 = (props: Header13SlotProps) => {
 			</div>
 		</section>
 	);
-};
-
-export const Header13SlotDefaults: Header13SlotProps = {
-	video: 'https://www.youtube.com/embed/8DKLYsikxTs?si=Ch9W0KrDWWUiCMMW',
-	image: {
-		src: 'https://d22po4pjz3o32e.cloudfront.net/placeholder-video-thumbnail.svg',
-		alt: 'Relume placeholder image',
-	},
 };

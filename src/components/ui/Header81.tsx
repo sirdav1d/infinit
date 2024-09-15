@@ -43,10 +43,10 @@ export const Header81 = (props: Header81Props) => {
 	return (
 		<section
 			ref={headerRef}
-			className='relative lg:h-[300vh]  bg-zinc-100'>
-			<div className='static top-0 grid auto-cols-fr grid-cols-1 items-center gap-y-16 pt-16 md:pt-24 lg:sticky lg:h-screen lg:grid-cols-2 lg:gap-y-0 lg:pt-0'>
-				<div className=' relative mx-[5%] lg:max-w-md mt-20 xl:mt-20 lg:ml-[5vw] lg:mr-20 lg:justify-self-end rounded-lg  p-4 bg-zinc-50/60 backdrop-blur-sm z-50'>
-					<h1 className='mb-3 text-6xl font-bold md:text-7xl capitalize'>
+			className='relative min-h-screen flex w-full justify-center items-center md:items-start lg:h-[300vh]  bg-zinc-100'>
+			<div className='static w-full top-0 grid auto-cols-fr grid-cols-1 items-center gap-y-16 pt-16 md:pt-24 lg:sticky lg:h-screen lg:grid-cols-2 lg:gap-y-0 lg:pt-0'>
+				<div className=' relative mx-1 md:mx-[5%] lg:max-w-md md:mt-20 xl:mt-20 lg:ml-[5vw] lg:mr-20 lg:justify-self-end rounded-lg  p-4 bg-zinc-50/60 backdrop-blur-sm z-10  mt-40'>
+					<h1 className='mb-3 text-4xl md:text-6xl font-bold xl:text-7xl capitalize'>
 						{heading}
 					</h1>
 					<p className='md:text-base font-medium lg:max-w-xs drop-shadow-md xl:text-lg'>

@@ -5,7 +5,7 @@ import Image from 'next/image';
 import {
 	BiLogoFacebookCircle,
 	BiLogoInstagram,
-	BiLogoLinkedinSquare
+	BiLogoLinkedinSquare,
 } from 'react-icons/bi';
 
 type ImageProps = {
@@ -94,18 +94,18 @@ export const Footer4 = (props: Footer4Props) => {
 						))}
 					</div>
 				</div>
-				<div className='flex flex-col md:flex-row text-center w-full mx-auto gap-5'>
-					<div className='flex flex-col gap-1 w-full'>
+				<div className='flex flex-col md:flex-row justify-between w-full mx-auto gap-5'>
+					<div className='flex flex-col gap-1 '>
 						<h3 className='font-semibold text-base'>E-mail:</h3>
 						<p className='text-sm'>infinitmultigestao@outlook.com</p>
 					</div>
-					<div className='flex flex-col gap-1 w-full'>
+					<div className='flex flex-col gap-1 '>
 						<h3 className='font-semibold text-base'>Telefone: </h3>
-						<p className='text-sm w-full'>11 2341-8001</p>
+						<p className='text-sm w-full'>+55 (11) 2341-8001</p>
 					</div>
-					<div className='flex flex-col gap-1 w-full'>
+					<div className='flex flex-col gap-1'>
 						<h3 className='font-semibold text-base'>WhatsApp:</h3>
-						<p className='text-sm'>11 99001 0623</p>
+						<p className='text-sm'>+55 (11) 99001 0623</p>
 					</div>
 				</div>
 				<div className='h-px w-full bg-zinc-700/30 mt-5' />

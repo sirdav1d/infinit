@@ -36,7 +36,7 @@ export const Layout507 = (props: Layout507Props) => {
 	return (
 		<section className='px-[5%] py-16 md:py-24 lg:py-28 '>
 			<div className='container'>
-				<div className='container mb-12 max-w-lg text-center md:mb-18 lg:mb-20'>
+				<div className='container mb-12 max-w-lg md:text-center md:mb-18 lg:mb-20'>
 					<p className='mb-3 font-semibold md:mb-4 text-red-600'>{tagline}</p>
 					<h1 className='mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl'>
 						{heading}
