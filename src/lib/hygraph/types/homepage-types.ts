@@ -34,6 +34,7 @@ export type Services = {
 };
 
 export type HygraphImage = {
+	id?: string;
 	url: string;
 };
 

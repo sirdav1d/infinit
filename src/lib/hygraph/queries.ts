@@ -156,3 +156,17 @@ export const ProjectsQuery = `query MyQuery {
     }
   }
 }`;
+
+export const ContactQuery = `query MyQuery {
+  contactpages {
+    cta
+    headline
+    image {
+      url
+    }
+    subheadline
+    sectioncontacheadline
+    sectioncontactdescription
+    sectioncontacttagline
+  }
+}`;

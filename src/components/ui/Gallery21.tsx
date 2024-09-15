@@ -12,16 +12,13 @@ import {
 } from '@relume_io/relume-ui';
 import type { CarouselApi } from '@relume_io/relume-ui';
 import clsx from 'clsx';
-
-type ImageProps = {
-	src: string;
-	alt?: string;
-};
+import { Galery } from '@/app/projects/[slug]/types';
+import Image from 'next/image';
 
 type Props = {
 	heading: string;
 	description: string;
-	images: ImageProps[];
+	images: Galery[];
 };
 
 export type Gallery21Props = React.ComponentPropsWithoutRef<'section'> &
@@ -29,7 +26,6 @@ export type Gallery21Props = React.ComponentPropsWithoutRef<'section'> &
 
 export const Gallery21 = (props: Gallery21Props) => {
 	const { heading, description, images } = {
-		...Gallery21Defaults,
 		...props,
 	} as Props;
 
@@ -47,9 +43,7 @@ export const Gallery21 = (props: Gallery21Props) => {
 	}, [api]);
 
 	return (
-		<section
-			id='relume'
-			className='overflow-hidden px-[5%] py-16 md:py-24 lg:py-28'>
+		<section className='overflow-hidden px-[5%] py-16'>
 			<div className='container'>
 				<div className='rb-12 mb-12 md:mb-18 lg:mb-20'>
 					<h2 className='rb-5 mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl'>
@@ -68,11 +62,13 @@ export const Gallery21 = (props: Gallery21Props) => {
 						{images.map((image, index) => (
 							<CarouselItem
 								key={index}
-								className='basis-full pl-0 pr-6 md:basis-1/2 md:pr-8'>
-								<img
-									src={image.src}
-									alt={image.alt}
-									className='aspect-square size-full object-cover'
+								className='basis-full pl-0 pr-6 md:basis-1/2 md:pr-8 rounded-md md:rounded-lg'>
+								<Image
+									width={400}
+									height={400}
+									src={image.url}
+									alt={`Projeto Imagem ${index}`}
+									className='aspect-square size-full object-cover rounded-md md:rounded-lg shadow-medium'
 								/>
 							</CarouselItem>
 						))}
@@ -99,27 +95,4 @@ export const Gallery21 = (props: Gallery21Props) => {
 			</div>
 		</section>
 	);
-};
-
-export const Gallery21Defaults: Gallery21Props = {
-	heading: 'Image Gallery',
-	description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-	images: [
-		{
-			src: 'https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg',
-			alt: 'Relume placeholder image 1',
-		},
-		{
-			src: 'https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg',
-			alt: 'Relume placeholder image 2',
-		},
-		{
-			src: 'https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg',
-			alt: 'Relume placeholder image 3',
-		},
-		{
-			src: 'https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg',
-			alt: 'Relume placeholder image 4',
-		},
-	],
 };
