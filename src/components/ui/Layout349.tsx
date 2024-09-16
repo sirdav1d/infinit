@@ -76,7 +76,7 @@ export const Layout349 = (props: Layout349Props) => {
 							<Image
 								width={440}
 								height={400}
-								key={content.id}
+								key={index}
 								src={content.image.url}
 								className={clsx(
 									'absolute w-[440px] h-[400px] object-cover z-50 rounded-md drop-shadow-xl',
