@@ -2,11 +2,8 @@
 
 import logo from '@/assets/logo.png';
 import Image from 'next/image';
-import {
-	BiLogoFacebookCircle,
-	BiLogoInstagram,
-	BiLogoLinkedinSquare,
-} from 'react-icons/bi';
+import { BiLogoInstagram, BiLogoWhatsapp } from 'react-icons/bi';
+import { CiLinkedin } from 'react-icons/ci';
 
 type ImageProps = {
 	url?: string;
@@ -88,6 +85,7 @@ export const Footer4 = (props: Footer4Props) => {
 							<a
 								className='hover:text-blue-600 transition-all ease-linear duration-200'
 								key={index}
+								target='_blank'
 								href={link.url}>
 								{link.icon}
 							</a>
@@ -131,11 +129,6 @@ export const Footer4 = (props: Footer4Props) => {
 };
 
 export const Footer4Defaults: Footer4Props = {
-	logo: {
-		url: '#',
-		src: 'https://d22po4pjz3o32e.cloudfront.net/logo-image.svg',
-		alt: 'Logo image',
-	},
 	columnLinks: [
 		{
 			links: [
@@ -147,9 +140,18 @@ export const Footer4Defaults: Footer4Props = {
 		},
 	],
 	socialMediaLinks: [
-		{ url: '#', icon: <BiLogoFacebookCircle className='size-8' /> },
-		{ url: '#', icon: <BiLogoInstagram className='size-8' /> },
-		{ url: '#', icon: <BiLogoLinkedinSquare className='size-8' /> },
+		{
+			url: 'https://api.whatsapp.com/send?phone=11990010623&text=Ol%C3%A1%2C+estava+navegando+pelo+seu+site+e+preciso+de+ajuda',
+			icon: <BiLogoWhatsapp className='size-8' />,
+		},
+		{
+			url: 'https://www.instagram.com/infinitmultigestao/',
+			icon: <BiLogoInstagram className='size-8' />,
+		},
+		{
+			url: 'https://www.linkedin.com/in/infint-multi-2b7734322/',
+			icon: <CiLinkedin className='size-8' />,
+		},
 	],
 	footerText: '© 2024 Tars Projetos. Todos os direitos reservados.',
 	footerLinks: [

@@ -30,12 +30,12 @@ export default async function page() {
 					{ value: 'tab-3', trigger: 'Valores', content: data.culturelist[2] },
 				]}
 			/>
-			<Timeline2
+			{/* <Timeline2
 				heading={data.sectiontimelineheadline}
 				description={data.sectiontimelinesubheadline}
 				tagline={data.sectiontimelinetagline}
 				timelines={data.timelinelist}
-			/>
+			/> */}
 			<CTA
 				sectionctaheadline={data.sectionctaheadline}
 				sectionctadescription={data.sectionctasubheadline}

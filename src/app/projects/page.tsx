@@ -25,12 +25,12 @@ export default async function page() {
 				description={projectContent.servicesection.description}
 				servicelist={projectContent.servicesection.servicelist}
 			/>
-			<Layout396
+			{/* <Layout396
 				tagline={projectContent.sectionprojectstagline}
 				heading={projectContent.sectionprojectstitle}
 				description={projectContent.sectionprojectsdescription}
 				featureSections={projectContent.projectslist}
-			/>
+			/> */}
 			<CTA
 				sectionctaheadline={projectContent.sectionctaheadline}
 				sectionctadescription={projectContent.sectionctasubheadline}

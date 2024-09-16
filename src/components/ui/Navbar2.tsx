@@ -2,16 +2,16 @@
 
 'use client';
 
-import { useState } from 'react';
-import { useMediaQuery } from '@relume_io/relume-ui';
-import type { ButtonProps } from '@relume_io/relume-ui';
-import { AnimatePresence, motion } from 'framer-motion';
-import { RxChevronDown } from 'react-icons/rx';
 import logo from '@/assets/logo.png';
+import type { ButtonProps } from '@relume_io/relume-ui';
+import { useMediaQuery } from '@relume_io/relume-ui';
+import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
-import { Button } from './button';
 import { usePathname } from 'next/navigation';
-import { Banner14 } from './Banner14';
+import { useState } from 'react';
+import { BiLogoWhatsapp } from 'react-icons/bi';
+import { RxChevronDown } from 'react-icons/rx';
+import { Button } from './button';
 
 type ImageProps = {
 	url?: string;
@@ -47,7 +47,6 @@ export const Navbar2 = (props: Navbar2Props) => {
 	return (
 		<nav className='top-0 fixed w-full py-4 z-50 bg-white/70 backdrop-blur-md px-4 lg:px-[5%] shadow-small '>
 			<div className='flex flex-col items-center justify-center'>
-				<Banner14 />
 				<div className='flex items-center justify-between w-full max-w-xxl mx-auto size-full'>
 					<a href={'/'}>
 						<Image
@@ -91,10 +90,18 @@ export const Navbar2 = (props: Navbar2Props) => {
 							</div>
 						))}
 					</motion.div>
-					<div className='hidden justify-self-end lg:block'>
-						<Button className='border-2 bg-transparent border-blue-500 hover:bg-blue-600 font-semibold text-blue-600 transition-all ease-linear duration-200 hover:text-zinc-50 text-base'>
+					<div className='hidden justify-self-end lg:flex gap-2 '>
+						{/* <Button className='border-2 bg-transparent border-blue-500 hover:bg-blue-600 font-semibold text-blue-600 transition-all ease-linear duration-200 hover:text-zinc-50 text-base'>
 							Área Do Cliente
-						</Button>
+						</Button> */}
+						<a
+							href='https://api.whatsapp.com/send?phone=11990010623&text=Ol%C3%A1%2C+estava+navegando+pelo+seu+site+e+preciso+de+ajuda'
+							target='_blank'
+							rel='noopener noreferrer'>
+							<Button className='border-2 border-green-500 bg-green-600 font-semibold hover:bg-green-500 transition-all ease-linear duration-200 text-green-50 text-base flex gap-1.5'>
+								(11) 99001 0623 <BiLogoWhatsapp size={28} />
+							</Button>
+						</a>
 					</div>
 				</div>
 			</div>
