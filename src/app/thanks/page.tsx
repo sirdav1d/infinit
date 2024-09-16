@@ -14,7 +14,7 @@ export default async function Thanks() {
 	const resp: TThanks = await fetchHygraph(ThanksQuery);
 	const data = resp.thanksPages[0];
 	return (
-		<section className=' flex flex-col items-center justify-center max-w-xxl mx-auto h-screen gap-5 px-4 xl:px-10'>
+		<section className=' flex flex-col items-center justify-center max-w-xxl mx-auto h-screen gap-5 px-4 xl:px-10 mt-20'>
 			<h1 className='text-4xl xl:text-7xl font-bold text-center xl:mt-0 capitalize'>
 				{data.headline}
 			</h1>

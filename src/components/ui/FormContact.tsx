@@ -1,123 +1,195 @@
 /** @format */
 'use client';
 
-import { Label, Textarea, Checkbox, Input } from '@relume_io/relume-ui';
-import React, { useState } from 'react';
-import { Button } from './button';
+import {
+	Form,
+	FormControl,
+	FormField,
+	FormItem,
+	FormLabel,
+	FormMessage,
+} from '@/components/ui/form';
+import { FormSchema } from '@/lib/formSchema';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useRouter } from 'next/navigation';
+import { useForm } from 'react-hook-form';
+import { toast } from 'sonner';
 import { z } from 'zod';
-import {} from 'react-hook-form';
+import { Button } from './button';
+import { Checkbox } from './checkbox';
+import { Input } from './input';
+import { Textarea } from './textarea';
+import { sendEmail } from '@/app/actions/email-action';
 
 export default function FormContact() {
-	const [nameInput, setNameInput] = useState('');
-	const [emailInput, setEmailInput] = useState('');
-	const [messageInput, setMessageInput] = useState('');
-	const [acceptTerms, setAcceptTerms] = useState<boolean | 'indeterminate'>(
-		false,
-	);
+	const form = useForm<z.infer<typeof FormSchema>>({
+		resolver: zodResolver(FormSchema),
+		defaultValues: {
+			name: '',
+			email: '',
+			phone: '',
+			message: '',
+			consent: false,
+		},
+	});
 
-	const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-		event.preventDefault();
-		console.log({
-			nameInput,
-			emailInput,
-			messageInput,
-			acceptTerms,
-		});
-	};
+	const router = useRouter();
+
+	async function onSubmit(values: z.infer<typeof FormSchema>) {
+		try {
+			const email = values.email;
+			const password = values.phone;
+			const name = values.name;
+			const message = values.message;
+			const consent = values.consent;
+			await sendEmail(values);
+			toast.success(`Mensagem enviada com sucesso`);
+			form.reset();
+			router.refresh();
+			router.push('/thanks');
+		} catch (error) {
+			toast.error(`Algo deu errado ${error}`);
+			console.log(error);
+		}
+	}
 
 	return (
 		<div>
-			<form
-				className='grid grid-cols-1 grid-rows-[auto_auto] gap-6'
-				onSubmit={handleSubmit}>
-				<div className='grid w-full items-center'>
-					<Label
-						htmlFor='name'
-						className='mb-2'>
-						Nome:
-					</Label>
-					<Input
-						className='rounded-md'
-						type='text'
-						id='name'
-						value={nameInput}
-						onChange={(e) => setNameInput(e.target.value)}
+			<Form {...form}>
+				<form
+					className='grid grid-cols-1 grid-rows-[auto_auto] gap-6'
+					onSubmit={form.handleSubmit(onSubmit)}>
+					<FormField
+						control={form.control}
+						name='name'
+						render={({ field }) => (
+							<FormItem
+								aria-required
+								className='relative w-full'>
+								<FormLabel className='text-base font-semibold text-zinc-900'>
+									Nome Completo:
+								</FormLabel>
+								<FormControl>
+									<Input
+										className='text-zinc-800 text-sm ring-0 rounded-md outline-none px-6 py-4 placeholder:text-zinc-400'
+										placeholder='nome do usuário'
+										type='text'
+										{...field}
+									/>
+								</FormControl>
+								<FormMessage className='absolute text-xs text-red-600' />
+							</FormItem>
+						)}
 					/>
-				</div>
-
-				<div className='grid w-full items-center'>
-					<Label
-						htmlFor='email'
-						className='mb-2'>
-						E-mail:
-					</Label>
-					<Input
-						className='rounded-md'
-						type='email'
-						id='email'
-						value={emailInput}
-						onChange={(e) => setEmailInput(e.target.value)}
+					<FormField
+						control={form.control}
+						name='email'
+						render={({ field }) => (
+							<FormItem
+								aria-required
+								className='relative w-full'>
+								<FormLabel className='text-base font-semibold text-zinc-900'>
+									E-mail:
+								</FormLabel>
+								<FormControl>
+									<Input
+										className='text-zinc-800 text-sm ring-0 rounded-md outline-none px-6 py-4 placeholder:text-zinc-400'
+										placeholder='Digite seu e-mail'
+										type='email'
+										{...field}
+									/>
+								</FormControl>
+								<FormMessage className='absolute text-xs text-red-600' />
+							</FormItem>
+						)}
 					/>
-				</div>
-				<div className='grid w-full items-center'>
-					<Label
-						htmlFor='phone'
-						className='mb-2'>
-						Telefone:
-					</Label>
-					<Input
-						className='rounded-md'
-						type='text'
-						id='phone'
-						value={emailInput}
-						onChange={(e) => setEmailInput(e.target.value)}
+					<FormField
+						control={form.control}
+						name='phone'
+						render={({ field }) => (
+							<FormItem
+								aria-required
+								className='relative w-full'>
+								<FormLabel className='text-base font-semibold text-zinc-900'>
+									Telefone:
+								</FormLabel>
+								<FormControl>
+									<Input
+										className='text-zinc-800 text-sm ring-0 rounded-md outline-none px-6 py-4 placeholder:text-zinc-400'
+										placeholder='(99) 99999 9999'
+										type='tel'
+										{...field}
+									/>
+								</FormControl>
+								<FormMessage className='absolute text-xs text-red-600' />
+							</FormItem>
+						)}
 					/>
-				</div>
-
-				<div className='grid w-full items-center'>
-					<Label
-						htmlFor='message'
-						className='mb-2'>
-						Menssagem:
-					</Label>
-					<Textarea
-						id='message'
-						placeholder='Digite sua mensagem...'
-						className='min-h-[11.25rem] overflow-auto rounded-md'
-						value={messageInput}
-						onChange={(e) => setMessageInput(e.target.value)}
+					<FormField
+						control={form.control}
+						name='message'
+						render={({ field }) => (
+							<FormItem
+								aria-required
+								className='relative w-full'>
+								<FormLabel className='text-base font-semibold text-zinc-900'>
+									Mensagem:
+								</FormLabel>
+								<FormControl>
+									<Textarea
+										className='text-zinc-800 text-sm ring-0 rounded-md outline-none px-6 py-4 placeholder:text-zinc-400'
+										placeholder='Digite sua mensagem'
+										{...field}
+									/>
+								</FormControl>
+								<FormMessage className='absolute text-xs text-red-600' />
+							</FormItem>
+						)}
 					/>
-				</div>
-
-				<div className='mb-3 flex items-center space-x-2 text-sm md:mb-4'>
-					<Checkbox
-						className='rounded checked:text-blue-600 bg-blue-600'
-						id='terms'
-						checked={acceptTerms}
-						onCheckedChange={setAcceptTerms}
+					<FormField
+						control={form.control}
+						name='consent'
+						render={({ field }) => (
+							<FormItem
+								aria-required
+								className='relative w-full flex gap-2 items-baseline'>
+								<>
+									<FormControl>
+										<Checkbox
+											checked={field.value}
+											onCheckedChange={field.onChange}
+										/>
+									</FormControl>
+									<FormLabel className='text-base font-normal text-zinc-900'>
+										<p>
+											Aceito os{' '}
+											<a
+												className='underline hover:text-blue-600 transition-all duration-200 ease-linear'
+												href='/politics'
+												target='_blank'
+												rel='noopener noreferrer'>
+												{''}termos
+											</a>
+										</p>
+									</FormLabel>
+									<FormMessage className='absolute text-xs text-red-600' />
+								</>
+							</FormItem>
+						)}
 					/>
-					<Label
-						htmlFor='terms'
-						className='cursor-pointer'>
-						Eu aceito os{' '}
-						<a
-							className='text-link-primary underline hover:text-blue-600'
-							href='/politics'
-							target='_blank'
-							rel='noopener noreferrer'>
-							Termos
-						</a>
-					</Label>
-				</div>
-
-				<div>
 					<Button
+						disabled={
+							form.formState.isLoading ||
+							form.formState.isSubmitting ||
+							!form.getValues('consent')
+						}
+						type='submit'
 						variant={'brand'}
-						className='w-full bg-blue-600 hover:bg-blue-500'>
+						className='w-full bg-blue-600 hover:bg-blue-500 disabled:grayscale-0 disabled:cursor-none'>
 						Enviar Mensagem
 					</Button>
-				</div>
-			</form>
+				</form>
+			</Form>
 		</div>
 	);
 }

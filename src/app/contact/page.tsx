@@ -24,7 +24,7 @@ export default async function page() {
 				tagline={data.sectioncontacttagline}
 				email='infinitmultigestao@outlook.com'
 				phone='+55 (11) 99001-0623'
-				address='Rua Das Roseiras Nº282 - Vila Lucia CEP: 031-44-010 - São Paulo/SP'
+				address='Rua Das Roseiras Nº282 - Vila Lucia CEP: 031.44.010 - São Paulo/SP'
 			/>
 		</main>
 	);

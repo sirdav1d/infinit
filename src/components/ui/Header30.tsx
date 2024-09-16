@@ -34,7 +34,9 @@ export const Header30 = (props: Header30Props) => {
 							{description}
 						</p>
 						<div className='mt-6 flex gap-x-4 md:mt-8'>
-							<Link prefetch href={'/contact#contact'}>
+							<Link
+								prefetch
+								href={'/contact#contact'}>
 								<Button
 									variant={'brand'}
 									className='text-lg flex gap-2 items-center group '>
@@ -54,7 +56,7 @@ export const Header30 = (props: Header30Props) => {
 					width={1440}
 					height={770}
 					src={image.url}
-					className='size-full object-cover'
+					className='size-full object-cover object-top'
 					alt={heading}
 				/>
 				<div className='absolute inset-0 bg-black/40' />

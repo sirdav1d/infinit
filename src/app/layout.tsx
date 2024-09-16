@@ -5,7 +5,7 @@ import { Montserrat } from 'next/font/google';
 import './globals.css';
 import { Footer4 } from '@/components/ui/Footer4';
 import { Navbar2 } from '@/components/ui/Navbar2';
-import { Banner14 } from '@/components/ui/Banner14';
+import { Toaster } from '@/components/ui/sonner';
 
 const montserrat = Montserrat({
 	subsets: ['latin'],
@@ -29,6 +29,7 @@ export default function RootLayout({
 			<body className={montserrat.className}>
 				<Navbar2 />
 				{children}
+				<Toaster position='top-center' />
 				<Footer4 />
 			</body>
 		</html>

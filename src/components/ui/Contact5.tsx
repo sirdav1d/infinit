@@ -30,11 +30,11 @@ export const Contact5 = (props: Contact5Props) => {
 	return (
 		<section
 			id='contact'
-			className='px-[5%] py-16 md:py-24 lg:py-28'>
-			<div className='container grid grid-cols-1 items-start gap-y-12 md:grid-flow-row md:grid-cols-2 md:gap-x-12 lg:grid-flow-col lg:gap-x-20 lg:gap-y-16'>
+			className='px-[5%] py-16 md:py-20 '>
+			<div className='container grid grid-cols-1 items-start gap-y-12 md:grid-flow-row md:grid-cols-2 md:gap-x-12 lg:grid-flow-col lg:gap-x-20 lg:gap-y-16 mt-40'>
 				<div>
 					<p className='mb-3 font-semibold md:mb-4 text-red-600'>{tagline}</p>
-					<div className='rb-6 mb-6 md:mb-8'>
+					<div className='rb-6 mb-6 md:mb-8 '>
 						<h2 className='rb-5 mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl'>
 							{heading}
 						</h2>
