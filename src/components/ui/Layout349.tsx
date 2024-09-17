@@ -38,8 +38,8 @@ export const Layout349 = (props: Layout349Props) => {
 		<section className='px-[5%]'>
 			<div className='container relative grid items-stretch gap-x-12 py-10 sm:gap-y-12 md:grid-cols-2 md:py-0 lg:gap-x-20'>
 				<ul className='grid grid-cols-1 gap-12 md:block'>
-					{contents.map((content) => (
-						<li key={content.id}>
+					{contents.map((content, index) => (
+						<li key={index}>
 							<div className='flex flex-col items-start justify-center md:h-screen'>
 								<p className='mb-3 font-semibold md:mb-4 text-red-600'>
 									{content.tagline}
@@ -70,9 +70,9 @@ export const Layout349 = (props: Layout349Props) => {
 						</li>
 					))}
 				</ul>
-				<div className=' hidden h-screen md:flex md:flex-col md:items-center md:justify-center sticky top-0'>
+				<ul className=' hidden h-screen md:flex md:flex-col md:items-center md:justify-center sticky top-0'>
 					{contents.map((content, index) => (
-						<>
+						<li key={index}>
 							<Image
 								width={440}
 								height={400}
@@ -87,9 +87,9 @@ export const Layout349 = (props: Layout349Props) => {
 								)}
 								alt={content.title}
 							/>
-						</>
+						</li>
 					))}
-				</div>
+				</ul>
 			</div>
 		</section>
 	);
