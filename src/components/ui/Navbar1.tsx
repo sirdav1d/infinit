@@ -103,11 +103,16 @@ export const Navbar1 = (props: Navbar1Props) => {
 							className='border-2 border-blue-600 transition-all ease-linear duration-200 text-blue-600 font-semibold text-base hover:bg-blue-600 hover:text-zinc-50 bg-transparent'>
 							Área Do Cliente
 						</Button> */}
-						<Button
-							variant={'brand'}
-							className='bg-green-600 hover:bg-green-500 text-zinc-50 border-2 border-green-500'>
-							(11) 99001-0623
-						</Button>
+						<a
+							href='https://api.whatsapp.com/send?phone=11990010623&text=Ol%C3%A1%2C+estava+navegando+pelo+seu+site+e+preciso+de+ajuda'
+							target='_blank'
+							rel='noopener noreferrer'>
+							<Button
+								variant={'brand'}
+								className='bg-green-600 hover:bg-green-500 text-zinc-50 border-2 border-green-500'>
+								(11) 99001-0623
+							</Button>
+						</a>
 					</div>
 				</motion.div>
 			</div>

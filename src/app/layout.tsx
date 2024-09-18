@@ -7,6 +7,7 @@ import { Footer4 } from '@/components/ui/Footer4';
 
 import { Toaster } from '@/components/ui/sonner';
 import { Navbar1 } from '@/components/ui/Navbar1';
+import { LogosWhatsappIcon } from '@/components/ui/LogosWhatsappIcon';
 
 const montserrat = Montserrat({
 	subsets: ['latin'],
@@ -31,6 +32,15 @@ export default function RootLayout({
 				<Navbar1 />
 				{children}
 				<Toaster position='top-center' />
+				<div className='relative w-full h-full'>
+					<a
+						className='cursor-pointer'
+						href='https://api.whatsapp.com/send?phone=11990010623&text=Ol%C3%A1%2C+estava+navegando+pelo+seu+site+e+preciso+de+ajuda'
+						target='_blank'
+						rel='noopener noreferrer'>
+						<LogosWhatsappIcon className='fixed right-2 bottom-2 w-12 h-12 hover:scale-110 transition-all duration-200 ease-linear' />
+					</a>
+				</div>
 				<Footer4 />
 			</body>
 		</html>
