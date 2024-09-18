@@ -59,7 +59,7 @@ export const Header30 = (props: Header30Props) => {
 					className='size-full object-cover object-top'
 					alt={heading}
 				/>
-				<div className='absolute inset-0 bg-black/40' />
+				<div className='absolute inset-0 bg-black/60' />
 			</div>
 		</section>
 	);

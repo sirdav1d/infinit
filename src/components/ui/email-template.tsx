@@ -29,7 +29,7 @@ export default function EmailTemplate(props: EmailTemplateProps) {
 			<Preview>Você Recebeu Um Novo Lead!</Preview>
 			<Tailwind>
 				<Body className='bg-zinc-800 text-stone-900 p-8'>
-					<Container>
+					<Container className='p-4'>
 						<Section className='bg-stone-50 border border-stone-950/80 rounded-lg p-6'>
 							<Section className='bg-zinc-900 text-zinc-50 rounded-lg'>
 								<Text className='font-bold text-center text-2xl'>

@@ -19,7 +19,7 @@ export const Layout349 = (props: Layout349Props) => {
 		...props,
 	} as Props;
 
-	const [activeSection, setActiveSection] = useState(5);
+	const [activeSection, setActiveSection] = useState(0);
 
 	const handleScroll = () => {
 		const sectionHeight = window.innerHeight;
@@ -70,26 +70,24 @@ export const Layout349 = (props: Layout349Props) => {
 						</li>
 					))}
 				</ul>
-				<ul className=' hidden h-screen md:flex md:flex-col md:items-center md:justify-center sticky top-0'>
+				<section className='sticky top-0 hidden h-screen md:flex md:flex-col md:items-center md:justify-center'>
 					{contents.map((content, index) => (
-						<li key={index}>
-							<Image
-								width={440}
-								height={400}
-								key={index}
-								src={content.image.url}
-								className={clsx(
-									'absolute w-[440px] h-[400px] object-cover z-50 rounded-md drop-shadow-xl',
-									{
-										'opacity-100': activeSection === index + 5,
-										'opacity-0': activeSection !== index + 5,
-									},
-								)}
-								alt={content.title}
-							/>
-						</li>
+						<Image
+							width={440}
+							height={400}
+							key={index}
+							src={content.image.url}
+							className={clsx(
+								'absolute w-[440px] h-[400px] object-cover z-50 rounded-md drop-shadow-xl',
+								{
+									'opacity-100': activeSection === index + 5,
+									'opacity-0': activeSection !== index + 5,
+								},
+							)}
+							alt={content.title}
+						/>
 					))}
-				</ul>
+				</section>
 			</div>
 		</section>
 	);

@@ -11,7 +11,7 @@ export default async function Politics() {
 	const data = resp.politics[0];
 	return (
 		<section className='max-w-xl mx-auto flex flex-col gap-10 px-4 md:px-10'>
-			<div className='md:mt-60 mt-12'>
+			<div className=' mt-12'>
 				<RichText content={data.politic.raw}></RichText>
 			</div>
 			<div>

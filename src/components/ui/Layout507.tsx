@@ -31,7 +31,7 @@ export const Layout507 = (props: Layout507Props) => {
 	} as Props;
 
 	const [activeTab, setActiveTab] = useState(defaultValue);
-	const MotionTabsContent = motion(TabsContent);
+	const MotionTabsContent = motion.create(TabsContent);
 
 	return (
 		<section className='px-[5%] py-16 md:py-24 lg:py-28 '>
