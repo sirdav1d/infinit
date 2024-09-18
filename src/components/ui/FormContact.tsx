@@ -37,11 +37,6 @@ export default function FormContact() {
 
 	async function onSubmit(values: z.infer<typeof FormSchema>) {
 		try {
-			const email = values.email;
-			const password = values.phone;
-			const name = values.name;
-			const message = values.message;
-			const consent = values.consent;
 			await sendEmail(values);
 			toast.success(`Mensagem enviada com sucesso`);
 			form.reset();
