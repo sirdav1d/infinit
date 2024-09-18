@@ -53,7 +53,7 @@ export default function BannerLGPD() {
 					initial={{ y: -80, opacity: 0 }}
 					exit={{ y: 80, opacity: 0, transition: { duration: 0.3 } }}
 					className={`fixed bottom-0 center 'flex' items-center w-full mx-auto h-fit text-zinc-950 text-xs lg:text-sm p-3  z-[999999999999999]`}>
-					<div className=' max-w-lg  rounded-lg gap-1 lg:gap-5 shadow-lg flex flex-col lg:flex-row justify-center items-center mx-auto p-5 bg-zinc-50/60 backdrop-blur-md lg:p-8 text-zinc-950 text-base'>
+					<div className=' max-w-lg  rounded-lg gap-1 lg:gap-5 shadow-lg flex flex-col lg:flex-row justify-center items-center mx-auto p-5 bg-zinc-50/60 backdrop-blur-md lg:p-8 text-zinc-950 text-sm'>
 						<p>
 							Nós utilizamos cookies para melhorar sua experiência como usuário.
 							Para conferir detalhadamente nossas boas práticas, acesse nossas{' '}
