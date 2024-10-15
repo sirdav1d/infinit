@@ -3,7 +3,7 @@
 import logo from '@/assets/logo.png';
 import Image from 'next/image';
 import { BiLogoInstagram, BiLogoWhatsapp } from 'react-icons/bi';
-import { CiLinkedin } from 'react-icons/ci';
+import { CiFacebook, CiLinkedin } from 'react-icons/ci';
 
 type ImageProps = {
 	url?: string;
@@ -151,6 +151,10 @@ export const Footer4Defaults: Footer4Props = {
 		{
 			url: 'https://www.linkedin.com/in/infint-multi-2b7734322/',
 			icon: <CiLinkedin className='size-8' />,
+		},
+		{
+			url: 'https://www.facebook.com/profile.php?id=61567194720883',
+			icon: <CiFacebook className='size-8' />,
 		},
 	],
 	footerText: '© 2024 Tars Projetos. Todos os direitos reservados.',
