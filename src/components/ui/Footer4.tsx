@@ -85,6 +85,7 @@ export const Footer4 = (props: Footer4Props) => {
 							<a
 								className='hover:text-blue-600 transition-all ease-linear duration-200'
 								key={index}
+								referrerPolicy='no-referrer'
 								target='_blank'
 								href={link.url}>
 								{link.icon}
