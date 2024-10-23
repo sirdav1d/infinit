@@ -44,7 +44,7 @@ export const Layout349 = (props: Layout349Props) => {
 								<p className='mb-3 font-semibold md:mb-4 text-red-600'>
 									{content.tagline}
 								</p>
-								<h2 className='rb-5 mb-5 text-3xl font-bold md:mb-6 md:text-5xl lg:text-7xl capitalize'>
+								<h2 className='rb-5 mb-5 text-3xl font-bold md:mb-6 md:text-5xl lg:text-7xl'>
 									{content.title}
 								</h2>
 								<p className='md:text-base max-w-sm'>{content.description}</p>

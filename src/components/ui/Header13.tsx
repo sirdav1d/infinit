@@ -39,7 +39,7 @@ export const Header13 = (props: Header13SlotProps) => {
 				<div className='container'>
 					<div className='grid grid-rows-1 md:mt-0 items-start gap-2 pb-12 md:grid-cols-2 md:gap-x-12 md:gap-y-8 lg:gap-x-20 lg:gap-y-16'>
 						<div>
-							<Heading className='text-5xl xxl:text-6xl font-bold capitalize'>
+							<Heading className='text-5xl xxl:text-6xl font-bold'>
 								{slot1}
 							</Heading>
 						</div>
