@@ -62,8 +62,8 @@ export const Header76 = (props: Header76Props) => {
 							</div>
 						))}
 					</div>
-					<div className='grid size-full animate-loop-vertically grid-cols-1 gap-4'>
-						{images.map((image, index) => (
+					<div className='grid size-full animate-loop-vertically-reverse grid-cols-1 gap-4'>
+						{images.reverse().map((image, index) => (
 							<div
 								key={index}
 								className='grid size-full grid-cols-1 gap-4 rounded-md'>
