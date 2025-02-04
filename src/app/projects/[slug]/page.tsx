@@ -24,7 +24,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
 	const data = resp.projectspages[0].projectslist[0];
 	return (
 		<main className='min-h-screen h-full w-full'>
-			<div className='mt-60 md:mt-40'>
+			<div className=' md:mt-10'>
 				<Header64
 					heading={data.title}
 					description={data.description}

@@ -96,7 +96,7 @@ export const Footer4 = (props: Footer4Props) => {
 				<div className='flex flex-col md:flex-row justify-between w-full mx-auto gap-5'>
 					<div className='flex flex-col gap-1 '>
 						<h3 className='font-semibold text-base'>E-mail:</h3>
-						<p className='text-sm'>infinitmultigestao@outlook.com</p>
+						<p className='text-sm'>faleconosco@infinitmultigestao.com.br</p>
 					</div>
 					<div className='flex flex-col gap-1 '>
 						<h3 className='font-semibold text-base'>Telefone: </h3>
@@ -148,10 +148,6 @@ export const Footer4Defaults: Footer4Props = {
 		{
 			url: 'https://www.instagram.com/infinitmultigestao/',
 			icon: <BiLogoInstagram className='size-8' />,
-		},
-		{
-			url: 'https://www.linkedin.com/in/infint-multi-2b7734322/',
-			icon: <CiLinkedin className='size-8' />,
 		},
 		{
 			url: 'https://www.facebook.com/profile.php?id=61567194720883',
