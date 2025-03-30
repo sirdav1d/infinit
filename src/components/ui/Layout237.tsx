@@ -31,7 +31,7 @@ export const Layout237 = (props: Layout237Props) => {
 						<p className='md:text-base'>{description}</p>
 					</div>
 				</div>
-				<div className='grid grid-cols-1  w-full lg:items-start lg:justify-center gap-y-12 md:grid-cols-2 md:gap-x-8 md:gap-y-16 lg:gap-x-12'>
+				<div className='grid grid-cols-1  w-full lg:items-start lg:justify-center gap-y-12 lg:grid-cols-3 md:gap-x-8 md:gap-y-16 lg:gap-x-12'>
 					{sections.map((section) => (
 						<div
 							key={section.id}
