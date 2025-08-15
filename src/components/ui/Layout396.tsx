@@ -22,7 +22,7 @@ export const Layout396 = (props: Layout396Props) => {
 	return (
 		<section
 			id='relume'
-			className='px-[5%] py-16 md:py-24 lg:py-28'>
+			className='px-[5%] py-16 md:py-20'>
 			<div className='container'>
 				<div className='mx-auto mb-12 w-full max-w-lg md:text-center md:mb-18 lg:mb-20'>
 					<p className='mb-3 font-semibold md:mb-4 text-red-600'>{tagline}</p>

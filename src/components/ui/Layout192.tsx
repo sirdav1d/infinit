@@ -22,7 +22,7 @@ export const Layout192 = (props: Layout192Props) => {
 	return (
 		<section
 			id='relume'
-			className='px-[5%] py-10 md:py-24 lg:py-28'>
+			className='px-[5%] py-10 md:py-20'>
 			<div className='container'>
 				<div className='flex flex-col md:flex-row gap-y-12 relative h-full md:items-center md:gap-x-12 lg:gap-x-20'>
 					<div className='order-2 md:order-1 w-full h-full  '>

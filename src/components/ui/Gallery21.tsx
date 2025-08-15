@@ -45,7 +45,7 @@ export const Gallery21 = (props: Gallery21Props) => {
 	return (
 		<section className='overflow-hidden px-[5%] py-16'>
 			<div className='container'>
-				<div className='rb-12 mb-12 md:mb-18 lg:mb-20'>
+				<div className='rb-12 mb-12 md:mb-18'>
 					<h2 className='rb-5 mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl'>
 						{heading}
 					</h2>
@@ -64,8 +64,8 @@ export const Gallery21 = (props: Gallery21Props) => {
 								key={index}
 								className='basis-full pl-0 pr-6 md:basis-1/2 md:pr-8 rounded-md md:rounded-lg'>
 								<Image
-									width={400}
-									height={400}
+									width={300}
+									height={300}
 									src={image.url}
 									alt={`Projeto Imagem ${index}`}
 									className='aspect-square size-full object-cover rounded-md md:rounded-lg shadow-medium'
@@ -73,7 +73,7 @@ export const Gallery21 = (props: Gallery21Props) => {
 							</CarouselItem>
 						))}
 					</CarouselContent>
-					<div className='rt-8 mt-8 flex items-center justify-between'>
+					<div className='rt-8 mt-4 flex items-center justify-between'>
 						<div className='mt-5 flex w-full items-start justify-start'>
 							{images.map((_, index) => (
 								<button

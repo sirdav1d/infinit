@@ -34,7 +34,7 @@ export const Layout507 = (props: Layout507Props) => {
 	const MotionTabsContent = motion.create(TabsContent);
 
 	return (
-		<section className='px-[5%] py-16 md:py-24 lg:py-28 '>
+		<section className='px-[5%] py-16 md:py-20 '>
 			<div className='container'>
 				<div className='container mb-12 max-w-lg md:text-center md:mb-18 lg:mb-20'>
 					<p className='mb-3 font-semibold md:mb-4 text-red-600'>{tagline}</p>
