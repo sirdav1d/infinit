@@ -4,6 +4,7 @@ import logo from '@/assets/logo.png';
 import Image from 'next/image';
 import { BiLogoInstagram, BiLogoWhatsapp } from 'react-icons/bi';
 import { CiFacebook, CiLinkedin } from 'react-icons/ci';
+import creaImg from '@/../public/selo-crea.jpg';
 
 type ImageProps = {
 	url?: string;
@@ -106,6 +107,13 @@ export const Footer4 = (props: Footer4Props) => {
 						<h3 className='font-semibold text-base'>WhatsApp:</h3>
 						<p className='text-sm'>+55 (11) 99001 0623</p>
 					</div>
+					<Image
+						width={120}
+						height={60}
+						src={creaImg}
+						alt={'Logo Crea'}
+						className='object-contain w-fit'
+					/>
 				</div>
 				<div className='h-px w-full bg-zinc-700/30 mt-5' />
 				<div className='flex flex-col-reverse items-center justify-center justify-items-center pb-4 pt-6 text-sm md:flex-row md:gap-x-6 md:pb-0 md:pt-8'>
