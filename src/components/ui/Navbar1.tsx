@@ -8,6 +8,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { RxChevronDown } from 'react-icons/rx';
 import { Button } from './button';
+import logo from '@/assets/logo.png';
 
 type NavLink = {
 	url: string;
@@ -37,9 +38,9 @@ export const Navbar1 = (props: Navbar1Props) => {
 				<div className='flex items-center justify-between py-4 px-[5%] min-h-full lg:px-0 '>
 					<a href={'/'}>
 						<Image
-							width={120}
-							height={120}
-							src={'/logo.jpg'}
+							width={50}
+							height={50}
+							src={logo}
 							alt={'Logo Infinit Multi Gestão'}
 						/>
 					</a>

@@ -15,6 +15,12 @@ export default async function CondoCarePage() {
 		<>
 			<div className='container max-md:px-[5%] pt-10 md:pt-20 h-full w-full'>
 				<div className='flex flex-col justify-center items-center gap-5 text-center'>
+					<Image
+						width={180}
+						height={180}
+						src={'/logo.jpg'}
+						alt={'Logo Infinit Multi Gestão'}
+					/>
 					<h1 className='mb-3 text-4xl md:text-6xl font-bold xl:text-7xl uppercase'>
 						A INFINIT apresenta o CondoCare
 					</h1>
