@@ -20,7 +20,7 @@ export const Layout237 = (props: Layout237Props) => {
 	return (
 		<section
 			id='relume'
-			className='px-[5%] py-10 md:py-20'>
+			className='px-[5%] pt-10 md:pt-20'>
 			<div className='container flex flex-col items-center'>
 				<div className='rb-12 mb-12 md:text-center md:mb-18 lg:mb-20'>
 					<div className='w-full max-w-lg'>

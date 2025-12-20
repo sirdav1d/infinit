@@ -23,7 +23,6 @@ export default async function Home() {
 				}}
 				herocta={data.herocta}
 			/>
-
 			<About
 				sectionabouttagline={data.sectionabouttagline}
 				sectionaboutheadline={data.sectionaboutheadline}

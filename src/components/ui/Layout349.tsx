@@ -1,11 +1,11 @@
-/** @format */
+﻿/** @format */
 
 'use client';
 
 import { HygraphFeatures } from '@/lib/hygraph/types/homepage-types';
 import clsx from 'clsx';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 type Props = {
 	contents: HygraphFeatures[];
@@ -14,30 +14,55 @@ type Props = {
 export type Layout349Props = React.ComponentPropsWithoutRef<'section'> &
 	Partial<Props>;
 
+const clamp = (value: number, min: number, max: number) =>
+	Math.min(max, Math.max(min, value));
+
 export const Layout349 = (props: Layout349Props) => {
-	const { contents } = {
+	const { contents = [] } = {
 		...props,
 	} as Props;
 
-	const [activeSection, setActiveSection] = useState(0);
+	const containerRef = useRef<HTMLElement | null>(null);
+	const [activeIndex, setActiveIndex] = useState(0);
+	const [isInView, setIsInView] = useState(false);
 
-	const handleScroll = () => {
-		const sectionHeight = window.innerHeight;
-		const currentScrollPosition = window.scrollY + sectionHeight / 2;
-		const currentSection = Math.floor(currentScrollPosition / sectionHeight);
-		setActiveSection(currentSection);
-		console.log(activeSection);
-	};
+	const handleScroll = useCallback(() => {
+		const el = containerRef.current;
+		if (!el) return;
+
+		const rect = el.getBoundingClientRect();
+		const top = rect.top + window.scrollY;
+		const bottom = top + rect.height;
+		const midpoint = window.scrollY + window.innerHeight / 2;
+
+		setIsInView(midpoint >= top && midpoint <= bottom);
+
+		const rawIndex = Math.floor((midpoint - top) / window.innerHeight);
+		const nextIndex = clamp(rawIndex, 0, Math.max(0, contents.length - 1));
+		setActiveIndex(nextIndex);
+	}, [contents.length]);
 
 	useEffect(() => {
-		window.addEventListener('scroll', handleScroll);
+		handleScroll();
+		window.addEventListener('scroll', handleScroll, { passive: true });
 		return () => window.removeEventListener('scroll', handleScroll);
-	}, [activeSection]);
+	}, [handleScroll]);
 
 	return (
-		<section className='px-[5%]'>
-			<div className='container relative grid items-stretch gap-x-12 py-10 sm:gap-y-12 md:grid-cols-2 md:py-0 lg:gap-x-20'>
-				<ul className='grid grid-cols-1 gap-12 md:block'>
+		<section
+			ref={containerRef}
+			className='px-[5%]'>
+			<div className='container relative grid items-stretch gap-x-12 md:grid-cols-2 md:py-0 lg:gap-x-10'>
+				<div
+					className={clsx(
+						'fixed inset-0 -z-10 bg-zinc-100 transition-opacity duration-200 ease-linear',
+						{
+							'opacity-0': !isInView,
+							'opacity-100': isInView,
+						},
+					)}
+				/>
+				<ul className='grid grid-cols-1 md:block'>
 					{contents.map((content, index) => (
 						<li key={index}>
 							<div className='flex flex-col items-start justify-center md:h-screen'>
@@ -58,15 +83,6 @@ export const Layout349 = (props: Layout349Props) => {
 									/>
 								</div>
 							</div>
-							<div
-								className={clsx(
-									'fixed inset-0 -z-10 bg-zinc-100 transition-all duration-200 ease-linear',
-									{
-										'opacity-0': activeSection === 5 || activeSection === 7,
-										'opacity-100': activeSection !== 5 && activeSection !== 7,
-									},
-								)}
-							/>
 						</li>
 					))}
 				</ul>
@@ -78,10 +94,10 @@ export const Layout349 = (props: Layout349Props) => {
 							key={index}
 							src={content.image.url}
 							className={clsx(
-								'absolute w-[440px] h-[400px] object-cover z-50 rounded-md drop-shadow-xl',
+								'absolute h-[400px] w-[440px] object-cover z-50 rounded-md drop-shadow-lg transition-opacity duration-200 ease-linear',
 								{
-									'opacity-100': activeSection === index + 5,
-									'opacity-0': activeSection !== index + 5,
+									'opacity-100': activeIndex === index,
+									'opacity-0': activeIndex !== index,
 								},
 							)}
 							alt={content.title}

@@ -145,6 +145,7 @@ export const Footer4Defaults: Footer4Props = {
 				{ title: 'Sobre Nós', url: '/about' },
 				{ title: 'Projetos', url: '/projects' },
 				{ title: 'Contato', url: '/contact' },
+				{ title: 'CondoCare', url: '/condoCare' },
 			],
 		},
 	],
