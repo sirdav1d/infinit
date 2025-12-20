@@ -18,13 +18,12 @@ export default async function CondoCarePage() {
 					<h1 className='mb-3 text-4xl md:text-6xl font-bold xl:text-7xl uppercase'>
 						A INFINIT apresenta o CondoCare
 					</h1>
-					<p className='md:text-base max-w-lg text-pretty drop-shadow-md xl:text-lg'>
+					<p className='md:text-base max-w-lg drop-shadow-md text-balance leading-relaxed'>
 						A INFINIT apresenta o CondoCare, um serviço criado para condomínios
 						que não querem apagar incêndios, mas prevenir problemas, reduzir
-						custos e valorizar seu patrimônio.
-						<br />
-						Mais do que visitas técnicas, oferecemos cuidado contínuo, olhar
-						profissional e presença ativa dentro do condomínio.
+						custos e valorizar seu patrimônio. Mais do que visitas técnicas,
+						oferecemos cuidado contínuo, olhar profissional e presença ativa
+						dentro do condomínio.
 					</p>
 				</div>
 				<div className='grid md:grid-cols-2 gap-10 items-center mt-20'>
@@ -32,7 +31,7 @@ export default async function CondoCarePage() {
 						<span className='font-semibold text-red-600'>
 							INFINIT CONDOCARE
 						</span>
-						<h2 className='text-xl md:text-4xl font-bold'>
+						<h2 className='text-xl md:text-4xl font-bold '>
 							Gestão Inteligente, Inspeção Preventiva e Valorização do
 							Condomínio
 						</h2>
@@ -47,7 +46,7 @@ export default async function CondoCarePage() {
 							necessidade.
 						</p>
 					</div>
-					<ul className='space-y-5'>
+					<ul className='space-y-2'>
 						<li>
 							<div className='flex items-center gap-2'>
 								<Image
@@ -55,7 +54,8 @@ export default async function CondoCarePage() {
 									src='/red.png'
 									alt='red'
 									width={40}
-									height={40} />
+									height={40}
+								/>
 								<h3 className='md:text-xl font-bold'>RED - Essencial</h3>
 							</div>
 							<p>Para condomínios que precisam do básico com segurança</p>
@@ -68,7 +68,8 @@ export default async function CondoCarePage() {
 									src='/blue.png'
 									alt='blue'
 									width={40}
-									height={40} />
+									height={40}
+								/>
 								<h3 className=' md:text-xl font-bold'>BLUE - Preventivo</h3>
 							</div>
 							<p>Para condomínios que buscam prevenção e controle</p>
@@ -81,7 +82,8 @@ export default async function CondoCarePage() {
 									src='/yellow.png'
 									alt='yellow'
 									width={40}
-									height={40} />
+									height={40}
+								/>
 								<h3 className=' md:text-xl font-bold'>YELLOW - Avançado</h3>
 							</div>
 							<p>Para condomínios que querem eficiência e planejamento</p>
@@ -94,7 +96,8 @@ export default async function CondoCarePage() {
 									src='/green.png'
 									alt='green'
 									width={40}
-									height={40} />
+									height={40}
+								/>
 								<h3 className=' md:text-xl font-bold'>GREEN - Premium</h3>
 							</div>
 							<p>Gestão completa, presença constante e tranquilidade total</p>
@@ -113,4 +116,3 @@ export default async function CondoCarePage() {
 		</>
 	);
 }
-
