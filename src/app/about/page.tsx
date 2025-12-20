@@ -1,13 +1,11 @@
 /** @format */
 
-import React from 'react';
+import CTA from '@/components/sections/CTA';
+import { Header13 } from '@/components/ui/Header13';
+import { Layout507 } from '@/components/ui/Layout507';
 import { fetchHygraph } from '@/lib/hygraph/fetch-hygraph';
 import { AboutQuery } from '@/lib/hygraph/queries';
 import { TAbout } from '@/lib/hygraph/types/aboutpage-types';
-import { Header13 } from '@/components/ui/Header13';
-import { Layout507 } from '@/components/ui/Layout507';
-import { Timeline2 } from '@/components/ui/Timeline2';
-import CTA from '@/components/sections/CTA';
 
 export default async function page() {
 	const resp: TAbout = await fetchHygraph(AboutQuery);

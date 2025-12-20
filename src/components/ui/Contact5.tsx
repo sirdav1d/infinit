@@ -30,8 +30,8 @@ export const Contact5 = (props: Contact5Props) => {
 	return (
 		<section
 			id='contact'
-			className='px-[5%] py-16 md:py-20 '>
-			<div className='container grid grid-cols-1 items-start gap-y-12 md:grid-flow-row md:grid-cols-2 md:gap-x-12 lg:grid-flow-col lg:gap-x-20 lg:gap-y-16 mt-40'>
+			className='px-[5%] py-10 md:py-20 '>
+			<div className='container grid grid-cols-1 items-start gap-y-12 md:grid-flow-row md:grid-cols-2 md:gap-x-12 lg:grid-flow-col lg:gap-x-20 lg:gap-y-16 '>
 				<div>
 					<p className='mb-3 font-semibold md:mb-4 text-red-600'>{tagline}</p>
 					<div className='rb-6 mb-6 md:mb-8 '>
@@ -54,7 +54,6 @@ export const Contact5 = (props: Contact5Props) => {
 							<BiPhone className='size-6 flex-none' />
 							<p>+55 (11) 2341-8001</p>
 						</div>
-						
 					</div>
 				</div>
 				<FormContact />

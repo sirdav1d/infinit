@@ -2,14 +2,13 @@
 
 'use client';
 
-import { useState } from 'react';
 import { useMediaQuery } from '@relume_io/relume-ui';
-
 import { AnimatePresence, motion } from 'framer-motion';
-import { RxChevronDown } from 'react-icons/rx';
 import Image from 'next/image';
-import logo from '@/assets/logo.png';
+import { useState } from 'react';
+import { RxChevronDown } from 'react-icons/rx';
 import { Button } from './button';
+import logo from '@/assets/logo.png';
 
 type NavLink = {
 	url: string;
@@ -39,8 +38,8 @@ export const Navbar1 = (props: Navbar1Props) => {
 				<div className='flex items-center justify-between py-4 px-[5%] min-h-full lg:px-0 '>
 					<a href={'/'}>
 						<Image
-							width={60}
-							height={60}
+							width={50}
+							height={50}
 							src={logo}
 							alt={'Logo Infinit Multi Gestão'}
 						/>
@@ -187,6 +186,7 @@ export const Navbar1Defaults: Navbar1Props = {
 		{ title: 'Home', url: '/' },
 		{ title: 'Sobre Nós', url: '/about' },
 		{ title: 'Projetos', url: '/projects' },
+		{ title: 'CondoCare', url: '/condoCare' },
 		{ title: 'Contato', url: '/contact' },
 	],
 };

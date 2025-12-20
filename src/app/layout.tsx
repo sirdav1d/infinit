@@ -8,7 +8,7 @@ import { Footer4 } from '@/components/ui/Footer4';
 import { Toaster } from '@/components/ui/sonner';
 import { Navbar1 } from '@/components/ui/Navbar1';
 import { LogosWhatsappIcon } from '@/components/ui/LogosWhatsappIcon';
-import  BannerLGPD  from '@/components/ui/BannerLGPD';
+import BannerLGPD from '@/components/ui/BannerLGPD';
 
 const montserrat = Montserrat({
 	subsets: ['latin'],
