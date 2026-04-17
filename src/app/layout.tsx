@@ -9,6 +9,7 @@ import { Toaster } from '@/components/ui/sonner';
 import { Navbar1 } from '@/components/ui/Navbar1';
 import { LogosWhatsappIcon } from '@/components/ui/LogosWhatsappIcon';
 import BannerLGPD from '@/components/ui/BannerLGPD';
+import { Analytics } from '@vercel/analytics/next';
 
 const montserrat = Montserrat({
 	subsets: ['latin'],
@@ -44,6 +45,7 @@ export default function RootLayout({
 					</a>
 				</div>
 				<Footer4 />
+				<Analytics />
 			</body>
 		</html>
 	);
